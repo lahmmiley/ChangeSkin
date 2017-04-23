@@ -34,17 +34,8 @@ namespace Psd2UGUI
             BaseNode root = CreateNodeTree(jsonData);
             GameObject goParent = GameObject.Find("Canvas");
             root.Build(goParent.transform);
-            //TODO
-            //居中
             GameObject goRoot = goParent.transform.FindChild("root").gameObject;
             goRoot.name = name;
-            RectTransform rectRoot = goRoot.GetComponent<RectTransform>();
-            rectRoot.anchorMin = Vector2.one * 0.5f;
-            rectRoot.anchorMax = Vector2.one * 0.5f;
-            rectRoot.pivot = Vector2.one * 0.5f;
-            rectRoot.anchoredPosition = Vector2.zero;
-
-            //goRoot.AddComponent<BattlePreparePanel>();
         }
 
         private BaseNode CreateNodeTree(JsonData jsonData)

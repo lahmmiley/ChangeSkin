@@ -26,7 +26,6 @@ namespace AssetManager
 #elif LAHM_RELEASE
             return _dict[spriteName];
 #endif
-            return null;
             //return StartCoroutine(LoadAssetBundle(panelName, spriteName));
         }
 

@@ -1,2 +1,7 @@
 Temp/
 Library/
+ProjectSettings/
+.vs/
+ChangeSkin.Editor.csproj
+ChangeSkin.csproj
+ChangeSkin.sln
