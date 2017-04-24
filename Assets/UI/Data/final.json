@@ -11,7 +11,7 @@
                                 "Children":
                                 [
                                     {
-                                        "Name":"button_DailyButton", "Type":"container", "X":12, "Y":81, "Width":55, "Height":55, 
+                                        "Name":"DailyButton", "Type":"button", "X":12, "Y":81, "Width":55, "Height":55, 
                                             "Children":
                                             [
                                                 {
@@ -23,7 +23,7 @@
                                             ]
                                     },
                                     {
-                                        "Name":"button_IconSwitcherIconButton", "Type":"container", "X":21, "Y":88, "Width":34, "Height":34, 
+                                        "Name":"IconSwitcherIconButton", "Type":"button", "X":21, "Y":88, "Width":34, "Height":34, 
                                             "Children":
                                             [
                                                 {
@@ -41,7 +41,7 @@
                                             ]
                                     },
                                     {
-                                        "Name":"button_MarketIconButton", "Type":"container", "X":13, "Y":213, "Width":54, "Height":55, 
+                                        "Name":"MarketIconButton", "Type":"button", "X":13, "Y":213, "Width":54, "Height":55, 
                                             "Children":
                                             [
                                                 {
@@ -53,7 +53,7 @@
                                             ]
                                     },
                                     {
-                                        "Name":"button_ShopIconButton", "Type":"container", "X":13, "Y":145, "Width":54, "Height":54, 
+                                        "Name":"ShopIconButton", "Type":"button", "X":13, "Y":145, "Width":54, "Height":54, 
                                             "Children":
                                             [
                                                 {
@@ -71,7 +71,7 @@
                                 "Children":
                                 [
                                     {
-                                        "Name":"Button_ArenaButton", "Type":"container", "X":609, "Y":3, "Width":55, "Height":55, 
+                                        "Name":"ArenaButton", "Type":"button", "X":609, "Y":3, "Width":55, "Height":55, 
                                             "Children":
                                             [
                                                 {
@@ -83,7 +83,7 @@
                                             ]
                                     },
                                     {
-                                        "Name":"Button_HandupButton", "Type":"container", "X":669, "Y":3, "Width":54, "Height":55, 
+                                        "Name":"HandupButton", "Type":"button", "X":669, "Y":3, "Width":54, "Height":55, 
                                             "Children":
                                             [
                                                 {
@@ -95,7 +95,7 @@
                                             ]
                                     },
                                     {
-                                        "Name":"Button_UpgradeButton", "Type":"container", "X":547, "Y":3, "Width":53, "Height":55, 
+                                        "Name":"UpgradeButton", "Type":"button", "X":547, "Y":3, "Width":53, "Height":55, 
                                             "Children":
                                             [
                                                 {
@@ -124,7 +124,7 @@
                     "Children":
                     [
                         {
-                            "Name":"Button_MapAreaButton", "Type":"container", "X":790, "Y":0, "Width":162, "Height":56, 
+                            "Name":"MapAreaButton", "Type":"button", "X":790, "Y":0, "Width":162, "Height":56, 
                                 "Children":
                                 [
                                     {

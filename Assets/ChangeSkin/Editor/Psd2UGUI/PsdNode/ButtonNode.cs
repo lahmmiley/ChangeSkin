@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UIComponent;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Psd2UGUI
@@ -14,7 +9,7 @@ namespace Psd2UGUI
         {
             base.Build(parent);
 
-            LButton button = this.gameObject.AddComponent<LButton>();
+            Button button = this.gameObject.AddComponent<Button>();
             button.targetGraphic = this.gameObject.transform.GetComponentInChildren<Image>();
             button.transition = Selectable.Transition.None;
             button.onClick.AddListener(ButtonOnClick);

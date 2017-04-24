@@ -25,9 +25,6 @@ namespace Psd2UGUI
                         result = new ImageNode();
                     }
                     break;
-                case NodeType.IMAGE_FOLDER:
-                    result = new ImageFolderNode();
-                    break;
                 case NodeType.MASK:
                     result = new MaskNode();
                     break;
@@ -36,15 +33,6 @@ namespace Psd2UGUI
                     break;
                 case NodeType.SCROLL_VIEW:
                     result = new ScrollViewNode();
-                    break;
-                case NodeType.TOGGLE_GROUP:
-                    result = new ToggleGroupNode();
-                    break;
-                case NodeType.TOGGLE:
-                    result = new ToggleNode();
-                    break;
-                case NodeType.LIST:
-                    result = new ListNode();
                     break;
                 default:
                     result = new ContainerNode();
