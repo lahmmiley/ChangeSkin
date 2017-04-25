@@ -3,6 +3,8 @@ Temp/
 Library/
 ProjectSettings/
 .vs/
+Assets/UnityVS/
+Assets/UnityVS.meta
 
 ChangeSkin.Editor.csproj
 ChangeSkin.csproj
