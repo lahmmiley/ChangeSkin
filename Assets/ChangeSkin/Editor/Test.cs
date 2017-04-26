@@ -9,63 +9,55 @@ namespace Psd2UGUI
 {
     public class Test
     {
-        private static RectTransform rectImage;
-        private static RectTransform rectChild;
-
-        private static RectTransform rectCreate;
-        private static RectTransform rectOldChild;
-
         [MenuItem("Psd2UGUI/Test")]
         private static void Init()
         {
-            GameObject goImage = GameObject.Find("Canvas/Old/Image");
-            rectImage = goImage.GetComponent<RectTransform>();
+            GameObject goImage = GameObject.Find("Canvas/Old/").transform.Find("Image").gameObject;
+            RectTransform rectImage = goImage.GetComponent<RectTransform>();
 
             //GameObject goChild = GameObject.Find("Canvas/Old/Image/child");
             //rectChild = goChild.GetComponent<RectTransform>();
 
             GameObject goCreate = GameObject.Instantiate(goImage) as GameObject;
             goCreate.name = "Image";
+            goCreate.SetActive(true);
             goCreate.transform.SetParent(GameObject.Find("Canvas/Create").transform);
-            rectCreate = goCreate.GetComponent<RectTransform>();
+            RectTransform rectCreate = goCreate.GetComponent<RectTransform>();
             rectCreate.anchoredPosition3D = rectImage.anchoredPosition3D;
             rectCreate.localScale = Vector3.one;
 
-            //rectOldChild = goOld.transform.FindChild("child").GetComponent<RectTransform>();
+            RectTransform rectOldChild = goCreate.transform.FindChild("child").GetComponent<RectTransform>();
 
-            Doit();
+            Doit(rectCreate, new Vector2(0.4f, 0.6f), new Vector2(0.2f, 0.7f), new Vector2(0.3f, 0.8f));
+            Doit(rectOldChild, new Vector2(0.8f, 0.6f), new Vector2(0.2f, 0.7f), new Vector2(0.3f, 0.8f));
         }
 
-        private static void Doit()
+        private static void Doit(RectTransform rect, Vector2 pivot, Vector2 anchorsMin, Vector2 anchorsMax)
         {
-            Vector2 pivot = Vector2.one;
-            Vector2 anchorsMin = new Vector2(0, 0);
-            Vector2 anchorsMax = new Vector2(1, 1);
-
             if(XAxisIsPoint(anchorsMin, anchorsMax))
             {
                 Debug.LogError("XIsPoint");
-                SyncXAxis(rectCreate, pivot.x, anchorsMin.x, anchorsMax.x);
+                SyncXAxis(rect, pivot.x, anchorsMin.x, anchorsMax.x);
             }
             else
             {
                 Debug.LogError("XNotPoint");
-                SyncWidth(rectImage, rectCreate, pivot.x, anchorsMin.x, anchorsMax.x);
+                SyncWidth(rect, pivot.x, anchorsMin.x, anchorsMax.x);
             }
 
             if(YAxisIsPoint(anchorsMin, anchorsMax))
             {
                 Debug.LogError("YIsPoint");
-                SyncYAxis(rectCreate, pivot.y, anchorsMin.y, anchorsMax.y);
+                SyncYAxis(rect, pivot.y, anchorsMin.y, anchorsMax.y);
             }
             else
             {
                 Debug.LogError("YNotPoint");
-                SyncHeight(rectImage, rectCreate, pivot.y, anchorsMin.y, anchorsMax.y);
+                SyncHeight(rect, pivot.y, anchorsMin.y, anchorsMax.y);
             }
 
-            Debug.LogError("offsetMin:" + rectCreate.offsetMin);
-            Debug.LogError("offsetMax:" + rectCreate.offsetMax);
+            //Debug.LogError("offsetMin:" + rect.offsetMin);
+            //Debug.LogError("offsetMax:" + rect.offsetMax);
         }
 
         private static void SyncXAxis(RectTransform rect, float pivotX, float minX, float maxX)
@@ -111,7 +103,7 @@ namespace Psd2UGUI
             return anchorsMin.y == anchorsMax.y;
         }
 
-        private static void SyncWidth(RectTransform rect, RectTransform rectCreate, float pivotX, float minX, float maxX)
+        private static void SyncWidth(RectTransform rect, float pivotX, float minX, float maxX)
         {
             Vector2 size = rect.sizeDelta;
             Vector2 pivot = rect.pivot;
@@ -123,11 +115,12 @@ namespace Psd2UGUI
             if(XAxisIsPoint(rect.anchorMin, rect.anchorMax))
             {
                 //转换pivot x为0时 anchoredPosition
-                float childLeft = anchoredPostion.x - pivot.x * size.x;
+                float left = anchoredPostion.x - pivot.x * size.x;
                 float anchorX = rect.anchorMin.x;
                 //转换anchored x为0时 anchoredPosition
-                minOffsetX = childLeft + anchorX * parentRect.rect.width;
-                maxOffsetX = parentRect.rect.width - (minOffsetX + size.x);
+                left = left + anchorX * parentRect.rect.width;
+                minOffsetX = left - minX * parentRect.rect.width;
+                maxOffsetX = (left + size.x) - maxX * parentRect.rect.width;
             }
             else
             {
@@ -135,14 +128,14 @@ namespace Psd2UGUI
             }
             
             //改变锚点
-            SetAnchorMinX(rectCreate, minX);
-            SetAnchorMaxX(rectCreate, maxX);
+            SetAnchorMinX(rect, minX);
+            SetAnchorMaxX(rect, maxX);
 
-            SetOffsetMinX(rectCreate, minOffsetX);
-            SetOffsetMaxX(rectCreate, -maxOffsetX);
+            SetOffsetMinX(rect, minOffsetX);
+            SetOffsetMaxX(rect, maxOffsetX);
         }
 
-        private static void SyncHeight(RectTransform rect, RectTransform rectCreate, float pivotY, float minY, float maxY)
+        private static void SyncHeight(RectTransform rect, float pivotY, float minY, float maxY)
         {
             Vector2 size = rect.sizeDelta;
             Vector2 pivot = rect.pivot;
@@ -154,10 +147,11 @@ namespace Psd2UGUI
             if(YAxisIsPoint(rect.anchorMin, rect.anchorMax))
             {
                 float height = parentRect.rect.height;
-                float childBottom = anchoredPostion.y - pivot.y * size.y;
+                float bottom = anchoredPostion.y - pivot.y * size.y;
                 float anchorY = rect.anchorMin.y;
-                minOffsetY = childBottom + anchorY * height;
-                maxOffsetY = height - (minOffsetY + size.y);
+                bottom = bottom + anchorY * height;
+                minOffsetY = bottom - minY * height;
+                maxOffsetY = (bottom + size.y) - height * maxY;
             }
             else
             {
@@ -168,11 +162,11 @@ namespace Psd2UGUI
             Debug.LogError("maxOffsetY:" + maxOffsetY);
 
             //改变锚点
-            SetAnchorMinY(rectCreate, minY);
-            SetAnchorMaxY(rectCreate, maxY);
+            SetAnchorMinY(rect, minY);
+            SetAnchorMaxY(rect, maxY);
 
-            SetOffsetMinY(rectCreate, minOffsetY);
-            SetOffsetMaxY(rectCreate, -maxOffsetY);
+            SetOffsetMinY(rect, minOffsetY);
+            SetOffsetMaxY(rect, maxOffsetY);
         }
 
         private static void SetAnchorMinX(RectTransform rect, float x)
