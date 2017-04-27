@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Tool;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace PrefabSync
 {
@@ -16,7 +18,7 @@ namespace PrefabSync
             string path = string.Empty;
             _traversalGameObject(path, goOld, goCreate);
             //Printer.Print(_addPathHash, "新添加的路径\n");
-            //Printer.Print(_inexistPathHash, "缺失的路径\n");
+            Printer.Print(_inexistPathHash, "缺失的路径\n");
         }
 
         private static void _traversalGameObject(string path, GameObject goOld, GameObject goCreate)
@@ -24,6 +26,7 @@ namespace PrefabSync
             RectTransform rectOld = goOld.GetComponent<RectTransform>();
             RectTransform rectCreate = goCreate.GetComponent<RectTransform>();
             SyncAnchorAndPivot(rectCreate, rectOld.pivot, rectOld.anchorMin, rectOld.anchorMax);
+            ReplaceImage(goOld, goCreate);
 
             Dictionary<string, int> oldNameDict = GetNameDict(rectOld);
             string[] oldNameArray = oldNameDict.Keys.ToArray<string>();
@@ -47,9 +50,10 @@ namespace PrefabSync
                 foreach(string name in inexistEnum)
                 {
                     _inexistPathHash.Add(path + name + "/");
-                    GameObject goInexist = GameObject.Instantiate(goOld.transform.Find(name).gameObject) as GameObject;
-                    //TODO 看了背包之后
-                    goInexist.transform.SetParent()
+                    GameObject goChildOld = goOld.transform.Find(name).gameObject;
+                    GameObject goInexist = GameObject.Instantiate(goChildOld) as GameObject;
+                    goInexist.transform.SetParent(rectCreate);
+                    SyncPosition(goInexist, goChildOld);
                 }
             }
 
@@ -65,6 +69,62 @@ namespace PrefabSync
                     _traversalGameObject(currentPath, goChildOld, goChildCreate);
                 }
             }
+
+            for(int i = 0; i < rectOld.childCount; i++)
+            {
+                string name = rectOld.GetChild(i).name;
+                Transform child = rectCreate.Find(name);
+                child.SetSiblingIndex(i);
+            }
+        }
+
+        private static HashSet<string> _replacedHash = new HashSet<string>();
+        private static void ReplaceImage(GameObject goOld, GameObject goCreate)
+        {
+            Image imageOld = goOld.GetComponent<Image>();
+            Image imageCreate = goCreate.GetComponent<Image>();
+            if(imageOld == null)
+            {
+                return;
+            }
+            if((imageOld != null) && (imageCreate == null))
+            {
+                Debug.LogWarning("存在老预设有图片 而新预设没图片的情况");
+                return;
+            }
+
+            //可能会出现sprite为空的情况
+            if(imageOld.sprite == null)
+            {
+                return;
+            }
+
+            string path = AssetDatabase.GetAssetPath(imageOld.sprite);
+            if(_replacedHash.Contains(path))
+            {
+                return;
+            }
+            _replacedHash.Add(path);
+            Debug.LogError("替换图片:" + path);
+            string createPath = AssetDatabase.GetAssetPath(imageCreate.sprite);
+
+            FileUtil.DeleteFileOrDirectory(path);
+            FileUtil.CopyFileOrDirectory(createPath, path);
+            imageCreate.sprite = AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
+            AssetDatabase.Refresh();
+        }
+
+        private static void SyncPosition(GameObject goCreate, GameObject goOld)
+        {
+            RectTransform rectCreate = goCreate.GetComponent<RectTransform>();
+            RectTransform rectOld = goOld.GetComponent<RectTransform>();
+            rectCreate.name = rectOld.name;
+            rectCreate.pivot = rectOld.pivot;
+            rectCreate.anchorMin = rectOld.anchorMin;
+            rectCreate.anchorMax = rectOld.anchorMax;
+            rectCreate.anchoredPosition3D = rectOld.anchoredPosition3D;
+            rectCreate.localRotation = rectOld.localRotation;
+            rectCreate.localScale = rectOld.localScale;
         }
 
         private static Dictionary<string, int> GetNameDict(RectTransform rect)
@@ -79,6 +139,7 @@ namespace PrefabSync
 
         private static void SyncAnchorAndPivot(RectTransform rect, Vector2 pivot, Vector2 anchorsMin, Vector2 anchorsMax)
         {
+            //TODO
             if(XAxisIsPoint(anchorsMin, anchorsMax))
             {
                 //Debug.LogError("XIsPoint");
@@ -149,7 +210,7 @@ namespace PrefabSync
         {
             Vector2 size = rect.sizeDelta;
             Vector2 pivot = rect.pivot;
-            Vector2 anchoredPostion = rect.anchoredPosition;
+            Vector2 anchoredPosition = rect.anchoredPosition;
             RectTransform parentRect = rect.parent.GetComponent<RectTransform>();
 
             float minOffsetX = 0;
@@ -157,7 +218,7 @@ namespace PrefabSync
             if(XAxisIsPoint(rect.anchorMin, rect.anchorMax))
             {
                 //转换pivot x为0时 anchoredPosition
-                float left = anchoredPostion.x - pivot.x * size.x;
+                float left = anchoredPosition.x - pivot.x * size.x;
                 float anchorX = rect.anchorMin.x;
                 //转换anchored x为0时 anchoredPosition
                 left = left + anchorX * parentRect.rect.width;
@@ -182,7 +243,7 @@ namespace PrefabSync
         {
             Vector2 size = rect.sizeDelta;
             Vector2 pivot = rect.pivot;
-            Vector2 anchoredPostion = rect.anchoredPosition;
+            Vector2 anchoredPosition = rect.anchoredPosition;
             RectTransform parentRect = rect.parent.GetComponent<RectTransform>();
 
             float minOffsetY = 0;
@@ -190,7 +251,7 @@ namespace PrefabSync
             if (YAxisIsPoint(rect.anchorMin, rect.anchorMax))
             {
                 float height = parentRect.rect.height;
-                float bottom = anchoredPostion.y - pivot.y * size.y;
+                float bottom = anchoredPosition.y - pivot.y * size.y;
                 float anchorY = rect.anchorMin.y;
                 bottom = bottom + anchorY * height;
                 minOffsetY = bottom - minY * height;
