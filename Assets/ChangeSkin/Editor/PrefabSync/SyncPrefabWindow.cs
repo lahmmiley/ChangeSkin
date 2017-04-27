@@ -49,16 +49,16 @@ namespace PrefabSync
                 }
             }
 
-            if(GUILayout.Button("替换图片", GUILayout.Width(100)))
-            {
-                string path = "Assets/Textures/UI/MainUI_/I18NUpgradeButtonIcon.png";
-                string createPath = "Assets/UI/Image/final/I18NUpgradeButtonIcon.png";
-                bool result = FileUtil.DeleteFileOrDirectory(path);
-                FileUtil.CopyFileOrDirectory(createPath, path);
-                GameObject.Find("Canvas/Old/Test/UpgradeButton").GetComponent<Image>().sprite =
-                    AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
-                AssetDatabase.Refresh();
-            }
+            //if(GUILayout.Button("替换图片", GUILayout.Width(100)))
+            //{
+            //    string path = "Assets/Textures/UI/MainUI_/I18NUpgradeButtonIcon.png";
+            //    string createPath = "Assets/UI/Image/final/I18NUpgradeButtonIcon.png";
+            //    bool result = FileUtil.DeleteFileOrDirectory(path);
+            //    FileUtil.CopyFileOrDirectory(createPath, path);
+            //    GameObject.Find("Canvas/Old/Test/UpgradeButton").GetComponent<Image>().sprite =
+            //        AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
+            //    AssetDatabase.Refresh();
+            //}
         }
     }
 }

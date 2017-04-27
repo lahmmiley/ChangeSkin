@@ -1,9 +1,9 @@
 {
-    "Name":"root", "Type":"container", "X":12, "Y":-38, "Width":986, "Height":306, 
+    "Name":"root", "Type":"container", "X":0, "Y":0, "Width":960, "Height":540, 
         "Children":
         [
             {
-                "Name":"BaseFunctionIconArea", "Type":"container", "X":12, "Y":-38, "Width":986, "Height":306, "Prefab":1, 
+                "Name":"BaseFunctionIconArea", "Type":"container", "X":0, "Y":0, "Width":960, "Height":540, "Prefab":1, 
                     "Children":
                     [
                         {
@@ -15,7 +15,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":47, "Y":81, "Width":20, "Height":20, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":47, "Y":81, "Width":20, "Height":20, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":47, "Y":81, "Width":20, "Height":20, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NAgenda", "Type":"image", "X":12, "Y":81, "Width":51, "Height":55, "Attach":1, "BelongPsd":"final"
@@ -45,7 +51,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":47, "Y":215, "Width":20, "Height":19, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":47, "Y":215, "Width":20, "Height":19, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":47, "Y":215, "Width":20, "Height":19, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NMarketButtonIcon", "Type":"image", "X":13, "Y":213, "Width":51, "Height":55, "Attach":1, "BelongPsd":"final"
@@ -57,7 +69,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":47, "Y":149, "Width":20, "Height":19, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":47, "Y":149, "Width":20, "Height":19, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":47, "Y":149, "Width":20, "Height":19, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NShopButtonIcon", "Type":"image", "X":13, "Y":145, "Width":51, "Height":54, "Attach":1, "BelongPsd":"final"
@@ -75,7 +93,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":644, "Y":6, "Width":20, "Height":19, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":644, "Y":6, "Width":20, "Height":19, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":644, "Y":6, "Width":20, "Height":19, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NArenaButtonIcon", "Type":"image", "X":609, "Y":3, "Width":53, "Height":55, "Attach":1, "BelongPsd":"final"
@@ -87,7 +111,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":704, "Y":6, "Width":19, "Height":19, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":704, "Y":6, "Width":19, "Height":19, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":704, "Y":6, "Width":19, "Height":19, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NHandupButtonIcon", "Type":"image", "X":669, "Y":3, "Width":52, "Height":55, "Attach":1, "BelongPsd":"final"
@@ -99,7 +129,13 @@
                                             "Children":
                                             [
                                                 {
-                                                    "Name":"RedPointImage", "Type":"image", "X":581, "Y":6, "Width":19, "Height":19, "BelongPsd":"final"
+                                                    "Name":"RedPointImage", "Type":"container", "X":581, "Y":6, "Width":19, "Height":19, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"MainUIRedPoint", "Type":"image", "X":581, "Y":6, "Width":19, "Height":19, "BelongPsd":"final"
+                                                            }
+                                                        ]
                                                 },
                                                 {
                                                     "Name":"I18NUpgradeButtonIcon", "Type":"image", "X":547, "Y":3, "Width":51, "Height":55, "Attach":1, "BelongPsd":"final"
@@ -109,13 +145,7 @@
                                 ]
                         },
                         {
-                            "Name":"ButtonPanel5", "Type":"container", "X":922, "Y":-38, "Width":76, "Height":76, 
-                                "Children":
-                                [
-                                    {
-                                        "Name":"placeholder", "Type":"image", "X":922, "Y":-38, "Width":76, "Height":76, "BelongPsd":"final"
-                                    }
-                                ]
+                            "Name":"placeholder", "Type":"image", "X":0, "Y":0, "Width":960, "Height":540, "BelongPsd":"final"
                         }
                     ]
             },
