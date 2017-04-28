@@ -1,0 +1,42 @@
+{
+    "Name":"root", "Type":"container", "X":352, "Y":111, "Width":585, "Height":169, 
+        "Children":
+        [
+            {
+                "Name":"BackpackWindow", "Type":"container", "X":352, "Y":111, "Width":585, "Height":169, 
+                    "Children":
+                    [
+                        {
+                            "Name":"Main", "Type":"container", "X":352, "Y":111, "Width":585, "Height":169, 
+                                "Children":
+                                [
+                                    {
+                                        "Name":"TabButtonGroup", "Type":"container", "X":352, "Y":111, "Width":585, "Height":169, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Button", "Type":"button", "X":352, "Y":111, "Width":585, "Height":169, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":352, "Y":111, "Width":585, "Height":169, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"gogogo", "Type":"text", "X":352, "Y":253, "Width":46, "Height":27, "Size":24, "Color":"0xFFFFFF", "Text":"翅膀"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Select", "Type":"image", "X":872, "Y":111, "Width":65, "Height":88, "Attach":1, "BelongPsd":"BackpackWindow"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    }
+                                ]
+                        }
+                    ]
+            }
+        ]
+}

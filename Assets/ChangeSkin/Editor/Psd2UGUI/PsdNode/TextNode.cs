@@ -1,5 +1,6 @@
 ﻿using LitJson;
 using Tool;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,13 +52,13 @@ namespace Psd2UGUI
         {
             GameObject go = CreateGameObject(parent);
             Text text = go.AddComponent<Text>();
-            text.font = Resources.Load("Font/arial") as Font;
+            text.font = AssetDatabase.LoadAssetAtPath("Assets/Font/wqy.ttf", typeof(Font)) as Font;
             text.fontSize = _size;
             text.text = _content;
             text.color = _color;
             //TODO 如果只有一行，就用overflow
             //如果有多行，缺少的宽度就没有影响了
-            text.horizontalOverflow = HorizontalWrapMode.Overflow;
+            //text.horizontalOverflow = HorizontalWrapMode.Overflow;
             text.alignment = _anchor;
 
             AdjustPosition(go, parent);

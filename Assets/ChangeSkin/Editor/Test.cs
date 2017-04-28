@@ -4,12 +4,23 @@ using System.Linq;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Psd2UGUI
 {
     public class Test
     {
         [MenuItem("Psd2UGUI/Test")]
+        private static void Test1()
+        {
+            Text text = GameObject.Find("Canvas/Text").GetComponent<Text>();
+            for(int i = 0; i < 50; i++)
+            {
+                text.fontSize = i;
+                Debug.LogError(string.Format("i:{0} height:{1}", i, text.preferredHeight));
+            }
+        }
+
         private static void Init()
         {
             GameObject goImage = GameObject.Find("Canvas/Old/").transform.Find("Image").gameObject;

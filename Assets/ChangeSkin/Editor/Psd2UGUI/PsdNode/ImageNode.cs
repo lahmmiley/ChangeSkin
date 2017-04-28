@@ -15,7 +15,10 @@ namespace Psd2UGUI
         //TODO 叫ProcessStruct不是很好，感觉只是处理结构
         public override void ProcessStruct(JsonData jsonData)
         {
-            _psdName = jsonData[NodeField.BELONG_PSD].ToString();
+            if(jsonData.Keys.Contains(NodeField.BELONG_PSD))
+            {
+                _psdName = jsonData[NodeField.BELONG_PSD].ToString();
+            }
             if(jsonData.Keys.Contains(NodeField.PARAM))
             {
                 _hasParam = true;
@@ -29,6 +32,10 @@ namespace Psd2UGUI
 
         public override void Build(Transform parent)
         {
+            if(string.IsNullOrEmpty(_psdName))
+            {
+                return;
+            }
             if(_isAttach)
             {
                 AttachImageToParent(parent);
