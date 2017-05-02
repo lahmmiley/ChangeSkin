@@ -6,6 +6,12 @@ ProjectSettings/
 Assets/UnityVS/
 Assets/UnityVS.meta
 
+Assets/Resources/Sprite/
+Assets/UI/Image/
+Assets/UI/Data/
+Assets/Slua/LuaObject/
+Assets/Slua/LuaObject.meta
+
 ChangeSkin.Editor.csproj
 ChangeSkin.csproj
 ChangeSkin.sln
