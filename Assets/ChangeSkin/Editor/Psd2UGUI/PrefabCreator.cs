@@ -34,7 +34,6 @@ namespace Psd2UGUI
             GameObject goParent = GameObject.Find("Canvas/New");
             root.Build(goParent.transform);
             GameObject goRoot = goParent.transform.FindChild("root").gameObject;
-            goRoot.name = name;
         }
 
         private BaseNode CreateNodeTree(JsonData jsonData)

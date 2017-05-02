@@ -17,7 +17,7 @@ namespace PrefabSync
         {
             string path = string.Empty;
             _traversalGameObject(path, goOld, goCreate);
-            //Printer.Print(_addPathHash, "新添加的路径\n");
+            Printer.Print(_addPathHash, "新添加的路径\n");
             Printer.Print(_inexistPathHash, "缺失的路径\n");
         }
 
@@ -25,6 +25,7 @@ namespace PrefabSync
         {
             RectTransform rectOld = goOld.GetComponent<RectTransform>();
             RectTransform rectCreate = goCreate.GetComponent<RectTransform>();
+            rectCreate.gameObject.SetActive(rectOld.gameObject.activeSelf);
             SyncAnchorAndPivot(rectCreate, rectOld.pivot, rectOld.anchorMin, rectOld.anchorMax);
             ReplaceImage(goOld, goCreate);
 
@@ -70,12 +71,12 @@ namespace PrefabSync
                 }
             }
 
-            for(int i = 0; i < rectOld.childCount; i++)
-            {
-                string name = rectOld.GetChild(i).name;
-                Transform child = rectCreate.Find(name);
-                child.SetSiblingIndex(i);
-            }
+            //for(int i = 0; i < rectOld.childCount; i++)
+            //{
+            //    string name = rectOld.GetChild(i).name;
+            //    Transform child = rectCreate.Find(name);
+            //    child.SetSiblingIndex(i);
+            //}
         }
 
         private static HashSet<string> _replacedHash = new HashSet<string>();
@@ -105,13 +106,13 @@ namespace PrefabSync
                 return;
             }
             _replacedHash.Add(path);
-            Debug.LogError("替换图片:" + path);
             string createPath = AssetDatabase.GetAssetPath(imageCreate.sprite);
+            Debug.LogError("替换图片:" + path + "   createPath:" + createPath);
 
             FileUtil.DeleteFileOrDirectory(path);
             FileUtil.CopyFileOrDirectory(createPath, path);
-            imageCreate.sprite = AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
             AssetDatabase.Refresh();
+            imageCreate.sprite = AssetDatabase.LoadAssetAtPath(path, typeof(Sprite)) as Sprite;
         }
 
         private static void SyncPosition(GameObject goCreate, GameObject goOld)
@@ -132,6 +133,12 @@ namespace PrefabSync
             Dictionary<string, int> dict = new Dictionary<string, int>();
             for(int i = 0; i < rect.childCount; i++)
             {
+                string name = rect.GetChild(i).name;
+                if(dict.ContainsKey(name))
+                {
+                    Debug.LogWarning("存在同名:" + name);
+                    continue;
+                }
                 dict.Add(rect.GetChild(i).name, i);
             }
             return dict;

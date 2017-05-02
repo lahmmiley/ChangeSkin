@@ -29,7 +29,7 @@ namespace AssetManager
 
         void OnPreprocessSprites()
         {
-            LogError("Sprites:" + assetPath);
+            //LogError("Sprites:" + assetPath);
         }
 
         void OnPreprocessTexture()

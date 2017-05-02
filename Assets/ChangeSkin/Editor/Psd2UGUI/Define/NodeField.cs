@@ -20,5 +20,8 @@ namespace Psd2UGUI
         public const string SIZE = "Size";
         public const string TEXT = "Text";
         public const string COLOR = "Color";
+        public const string ONE_LINE = "OneLine";
+        public const string Orientation = "Orientation";
+        public const string LineSpacing = "LineSpacing";
     }
 }
