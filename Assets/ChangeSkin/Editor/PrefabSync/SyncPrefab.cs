@@ -10,12 +10,16 @@ namespace PrefabSync
 {
     public class SyncPrefab
     {
-        private static HashSet<string> _addPathHash = new HashSet<string>();
-        private static HashSet<string> _inexistPathHash = new HashSet<string>();
+        private static HashSet<string> _addPathHash;
+        private static HashSet<string> _inexistPathHash;
+        private static HashSet<string> _replacedHash;
 
         public static void ComparePrefab(GameObject goOld, GameObject goCreate)
         {
             string path = string.Empty;
+            _addPathHash = new HashSet<string>();
+            _inexistPathHash = new HashSet<string>();
+            _replacedHash = new HashSet<string>();
             _traversalGameObject(path, goOld, goCreate);
             Printer.Print(_addPathHash, "新添加的路径\n");
             Printer.Print(_inexistPathHash, "缺失的路径\n");
@@ -35,13 +39,30 @@ namespace PrefabSync
             Dictionary<string, int> createNameDict = GetNameDict(rectCreate);
             string[] createNameArray = createNameDict.Keys.ToArray<string>();
 
+            HashSet<string> sameNameHash = new HashSet<string>();
+            foreach(string name in createNameDict.Keys)
+            {
+                if(createNameDict[name] > 1)
+                {
+                    sameNameHash.Add(name);
+                }
+            }
+
+            //判断同名数量是否一致，不一致提示
+            foreach(string name in sameNameHash)
+            {
+                if(createNameDict[name] != oldNameDict[name])
+                {
+                    throw new Exception("不一致");
+                }
+            }
 
             IEnumerable<string> addEnum = createNameArray.Except<string>(oldNameArray);
             if(addEnum != null)
             {
                 foreach(string name in addEnum)
                 {
-                    _addPathHash.Add(path + name + "/");
+                    _addPathHash.Add(path + name + "/" + "  count:" + createNameDict[name]);
                 }
             }
 
@@ -64,22 +85,39 @@ namespace PrefabSync
                 //TODO 顺序判断 不对则警告
                 foreach(string name in intersectEnum)
                 {
-                    GameObject goChildOld = rectOld.Find(name).gameObject;
-                    GameObject goChildCreate = rectCreate.Find(name).gameObject;
-                    string currentPath = path + name + "/";
-                    _traversalGameObject(currentPath, goChildOld, goChildCreate);
+                    if(sameNameHash.Contains(name))
+                    {
+                        for(int i = 0; i < createNameDict[name]; i++)
+                        {
+                            GameObject goChildOld = rectOld.GetChild(i).gameObject;
+                            GameObject goChildCreate = rectCreate.GetChild(i).gameObject;
+                            //TODO 先针对现有情况简单处理
+                            string currentPath = path + name + "/";
+                            _traversalGameObject(currentPath, goChildOld, goChildCreate);
+                        }
+                    }
+                    else
+                    {
+                        GameObject goChildOld = rectOld.Find(name).gameObject;
+                        GameObject goChildCreate = rectCreate.Find(name).gameObject;
+                        string currentPath = path + name + "/";
+                        _traversalGameObject(currentPath, goChildOld, goChildCreate);
+                    }
                 }
             }
 
-            //for(int i = 0; i < rectOld.childCount; i++)
-            //{
-            //    string name = rectOld.GetChild(i).name;
-            //    Transform child = rectCreate.Find(name);
-            //    child.SetSiblingIndex(i);
-            //}
+            for(int i = 0; i < rectOld.childCount; i++)
+            {
+                string name = rectOld.GetChild(i).name;
+                //非同名排序
+                if(!sameNameHash.Contains(name))
+                {
+                    Transform child = rectCreate.Find(name);
+                    child.SetSiblingIndex(i);
+                }
+            }
         }
 
-        private static HashSet<string> _replacedHash = new HashSet<string>();
         private static void ReplaceImage(GameObject goOld, GameObject goCreate)
         {
             Image imageOld = goOld.GetComponent<Image>();
@@ -90,7 +128,7 @@ namespace PrefabSync
             }
             if((imageOld != null) && (imageCreate == null))
             {
-                Debug.LogWarning("存在老预设有图片 而新预设没图片的情况");
+                Debug.LogWarning("存在老预设有图片 而新预设没图片的情况:" + imageOld.name);
                 return;
             }
 
@@ -107,6 +145,11 @@ namespace PrefabSync
             }
             _replacedHash.Add(path);
             string createPath = AssetDatabase.GetAssetPath(imageCreate.sprite);
+            if (createPath.Equals(path))
+            {
+                //路径相同不替换
+                return;
+            }
             Debug.LogError("替换图片:" + path + "   createPath:" + createPath);
 
             FileUtil.DeleteFileOrDirectory(path);
@@ -134,12 +177,15 @@ namespace PrefabSync
             for(int i = 0; i < rect.childCount; i++)
             {
                 string name = rect.GetChild(i).name;
-                if(dict.ContainsKey(name))
+                if(!dict.ContainsKey(name))
+                {
+                    dict.Add(name, 0);
+                }
+                else
                 {
                     Debug.LogWarning("存在同名:" + name);
-                    continue;
                 }
-                dict.Add(rect.GetChild(i).name, i);
+                dict[name] += 1;
             }
             return dict;
         }

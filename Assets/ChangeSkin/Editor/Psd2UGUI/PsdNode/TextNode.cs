@@ -78,22 +78,22 @@ namespace Psd2UGUI
                 _lineSpacing = float.Parse(jsonData[NodeField.LineSpacing].ToString());
             }
 
-            if(jsonData.ContainKey(NodeField.PARAM))
-            {
-                string param = jsonData[NodeField.PARAM].ToString();
-                if(param.IndexOf("Left") != -1)
-                {
-                    _anchor = TextAnchor.UpperLeft;
-                }
-                else if(param.IndexOf("Center") != -1)
-                {
-                    _anchor = TextAnchor.UpperCenter;
-                }
-                else if(param.IndexOf("Right") != -1)
-                {
-                    _anchor = TextAnchor.UpperRight;
-                }
-            }
+            //if(jsonData.ContainKey(NodeField.PARAM))
+            //{
+            //    string param = jsonData[NodeField.PARAM].ToString();
+            //    if(param.IndexOf("Left") != -1)
+            //    {
+            //        _anchor = TextAnchor.UpperLeft;
+            //    }
+            //    else if(param.IndexOf("Center") != -1)
+            //    {
+            //        _anchor = TextAnchor.UpperCenter;
+            //    }
+            //    else if(param.IndexOf("Right") != -1)
+            //    {
+            //        _anchor = TextAnchor.UpperRight;
+            //    }
+            //}
         }
 
         public override void Build(Transform parent)

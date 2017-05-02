@@ -1,4 +1,5 @@
 ﻿using LitJson;
+using Psd2UGUI;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,21 +9,6 @@ using UnityEngine;
 
 namespace AssetManager
 {
-    public class NodeField
-    {
-        public const string NAME = "Name";
-        public const string TYPE = "Type";
-        public const string X = "X";
-        public const string Y = "Y";
-        public const string WIDTH = "Width";
-        public const string HEIGHT = "Height";
-        public const string CHILDREN = "Children";
-        public const string PARAM = "Param";
-        public const string BELONG_PSD = "BelongPsd";
-        public const string SIZE = "Size";
-        public const string TEXT = "Text";
-    }
-
     public class TextureProcessor : AssetPostprocessor
     {
         private static Dictionary<string, Dictionary<string, Vector4>> _jsonDict = new Dictionary<string, Dictionary<string, Vector4>>();
@@ -74,16 +60,15 @@ namespace AssetManager
         private static void TraversalTree(JsonData jsonData, Dictionary<string, Vector4> sliceDict)
         {
             string typeStr = jsonData[NodeField.TYPE].ToString().ToLower();
-            if ((typeStr == "image") && (jsonData.Keys.Contains(NodeField.PARAM)))
+            if ((typeStr == "image") && (jsonData.Keys.Contains(NodeField.SLICE)))
             {
                 string name = jsonData[NodeField.NAME].ToString();
                 if(!sliceDict.ContainsKey(name))
                 {
-                    string param = jsonData[NodeField.PARAM].ToString();
+                    string param = jsonData[NodeField.SLICE].ToString();
                     string[] splitArray = param.Split(',');
-                    Vector4 v4 = new Vector4(float.Parse(splitArray[2]), float.Parse(splitArray[1]), float.Parse(splitArray[3]), float.Parse(splitArray[0]));//0:上 1:下 2:左 3:右
+                    Vector4 v4 = new Vector4(float.Parse(splitArray[3]), float.Parse(splitArray[2]), float.Parse(splitArray[1]), float.Parse(splitArray[0]));
                     sliceDict.Add(name, v4);
-
                 }
             }
             if (jsonData.Keys.Contains(NodeField.CHILDREN))

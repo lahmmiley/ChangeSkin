@@ -9,7 +9,7 @@ namespace Psd2UGUI
     {
         private string _psdName;
         private string _spriteName;
-        private bool _hasParam = false;
+        private bool _isSlice = false;
         private bool _isAttach = false;
 
         //TODO 叫ProcessStruct不是很好，感觉只是处理结构
@@ -19,9 +19,9 @@ namespace Psd2UGUI
             {
                 _psdName = jsonData[NodeField.BELONG_PSD].ToString();
             }
-            if(jsonData.Keys.Contains(NodeField.PARAM))
+            if(jsonData.Keys.Contains(NodeField.SLICE))
             {
-                _hasParam = true;
+                _isSlice = true;
             }
             if(jsonData.Keys.Contains(NodeField.ATTACH))
             {
@@ -44,7 +44,7 @@ namespace Psd2UGUI
             GameObject go = CreateGameObject(parent);
             Image image = go.AddComponent<Image>();
             image.sprite = AssetLoader.LoadSprite(_psdName, _spriteName);
-            if(_hasParam)
+            if(_isSlice)
             {
                 image.type = Image.Type.Sliced;
             }
@@ -56,7 +56,7 @@ namespace Psd2UGUI
         {
             Image image = parent.gameObject.AddComponent<Image>();
             image.sprite = AssetLoader.LoadSprite(_psdName, _spriteName);
-            if(_hasParam)
+            if(_isSlice)
             {
                 image.type = Image.Type.Sliced;
             }
