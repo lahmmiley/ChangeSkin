@@ -11,9 +11,9 @@ namespace AssetManager
         public static void Generate(string jsonPath)
         {
             string jsonFileName = FileUtility.GetFileName(jsonPath);
-            string imageDir = FileUtility.IMAGE_DIR + FileUtility.RemovePostfix(jsonFileName);
+            string imageDir = FileUtility.PSD_IMAGE_DIR + FileUtility.RemovePostfix(jsonFileName);
             string[] guidList = AssetDatabase.FindAssets("t:texture2D", new string[] { imageDir });
-            string moveDir = FileUtility.TEXTURE_ATLAS_DIR + FileUtility.RemovePostfix(jsonFileName) + FileUtility.XIUXIAN_POSTFIX + "_/";
+            string moveDir = FileUtility.TEXTURE_MODULE_ATLAS_DIR + FileUtility.RemovePostfix(jsonFileName) + FileUtility.XIUXIAN_POSTFIX + "_/";
             FileUtility.CreateDirectory(moveDir);
 
             DeleteExistTexture(guidList, moveDir);

@@ -26,7 +26,18 @@ namespace Psd2UGUI
         static string mainAssetPath = "Assets/AssetBundle/gg.prefab";
         static string mainAssetTarget = "Assets/AssetBundle/gg.ab";
 
-        [MenuItem("Psd2UGUI/TestBuild")]
+        [MenuItem("GameObject/复制路径")]
+        private static void Test2()
+        {
+            Debug.LogError(Selection.activeObject.name);
+            TextEditor te = new TextEditor();
+            te.content = new GUIContent(Selection.activeObject.name);
+            te.OnFocus();
+            te.Copy();
+        }
+
+
+        //[MenuItem("Psd2UGUI/TestBuild")]
         private static void Test1()
         {
             buildTarget = BuildTarget.StandaloneWindows64;

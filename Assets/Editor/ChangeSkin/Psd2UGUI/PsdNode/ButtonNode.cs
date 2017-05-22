@@ -14,7 +14,7 @@ namespace Psd2UGUI
 
             Button button = this.gameObject.AddComponent<Button>();
             button.targetGraphic = this.gameObject.transform.GetComponentInChildren<Image>();
-            button.transition = Selectable.Transition.None;
+            button.transition = Selectable.Transition.ColorTint;
             button.onClick.AddListener(ButtonOnClick);
         }
 

@@ -28,6 +28,7 @@ namespace Psd2UGUI
         {
             GameObject go = new GameObject();
             go.name = Name;
+            go.layer = LayerMask.NameToLayer("UI");
             RectTransform rect = go.AddComponent<RectTransform>();
             rect.localScale = Vector3.one;
             rect.pivot = Vector2.up;

@@ -13,10 +13,10 @@ namespace Tool
 {
     public class FileUtility
     {
-        public const string IMAGE_DIR = "Assets/PsdResources/Image/";
-        public static string UI_DATA_DIR = IMAGE_DIR.Replace("Image", "Data");
+        public const string PSD_IMAGE_DIR = "Assets/PsdResources/Image/";
+        public static string UI_DATA_DIR = PSD_IMAGE_DIR.Replace("Image", "Data");
         public const string TEXTURE_DIR = "Assets/Textures/";
-        public const string TEXTURE_ATLAS_DIR = "Assets/Textures/UI/";
+        public const string TEXTURE_MODULE_ATLAS_DIR = "Assets/Textures/UI/";
         public const string MAP_DIR = "Assets/Textures/Maps/";
 
         public const string RESOURCE_SPRITE_DIR = "Assets/Resources/Sprite/";
