@@ -19,6 +19,9 @@ namespace AssetManager
 
         public override void PreFormatTexture(TextureImporter textureImporter)
         {
+            textureImporter.npotScale = TextureImporterNPOTScale.None;
+            textureImporter.mipmapEnabled = false;
+            textureImporter.wrapMode = TextureWrapMode.Clamp;
             textureImporter.isReadable = true;
         }
 

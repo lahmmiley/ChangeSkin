@@ -30,8 +30,17 @@ namespace Psd2UGUI
                 case NodeType.BUTTON:
                     result = new ButtonNode(jsonData);
                     break;
+                case NodeType.ENTER_EXIT_BUTTON:
+                    result = new EnterExitButtonNode(jsonData);
+                    break;
+                case NodeType.TOGGLE:
+                    result = new ToggleNode(jsonData);
+                    break;
                 case NodeType.SCROLL_VIEW:
                     result = new ScrollViewNode(jsonData);
+                    break;
+                case NodeType.INPUT:
+                    result = new InputNode(jsonData);
                     break;
                 default:
                     result = new ContainerNode(jsonData);

@@ -13,6 +13,8 @@ namespace Psd2UGUI
         public const string TOGGLE= "toggle";
         public const string LIST = "list";
         public const string CONTAINER = "container";
+        public const string INPUT = "input";
+        public const string ENTER_EXIT_BUTTON = "enterexitbutton";
 
         public const string PLACEHOLDER = "placeholder";
     }

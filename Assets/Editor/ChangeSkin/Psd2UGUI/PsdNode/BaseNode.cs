@@ -1,5 +1,6 @@
 using LitJson;
 using UnityEngine;
+using Tool;
 
 namespace Psd2UGUI
 {
@@ -12,6 +13,7 @@ namespace Psd2UGUI
         public int Width;
         public int Height;
         public BaseNode[] Children;
+        public bool Hide = false;
 
         protected GameObject gameObject;
 
@@ -22,6 +24,10 @@ namespace Psd2UGUI
             this.Y = (int)jsonData[NodeField.Y];
             this.Width = (int)jsonData[NodeField.WIDTH];
             this.Height = (int)jsonData[NodeField.HEIGHT];
+            if (jsonData.ContainKey(NodeField.HIDE))
+            {
+                this.Hide = true;
+            }
         }
 
         protected GameObject CreateGameObject(Transform parent)
@@ -37,6 +43,10 @@ namespace Psd2UGUI
             rect.sizeDelta = new Vector2(Width, Height);
             rect.anchoredPosition3D = new Vector3(X, -Y, 0);
             go.transform.SetParent(parent, false);
+            if(this.Hide)
+            {
+                go.SetActive(false);
+            }
             return go;
         }
 

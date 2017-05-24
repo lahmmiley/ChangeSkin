@@ -16,6 +16,14 @@ namespace Psd2UGUI
         public const string CHILDREN = "Children";
         public const string ATTACH = "Attach";
 
+        public const string HIDE = "Hide";
+        public const string MASK = "Mask";
+        public const string CANVAS = "Canvas";
+
+        //Button
+        public const string SCALE = "Scale";
+        public const string COLOR_TINT = "ColorTint";
+
         //Image
         public const string BELONG_PSD = "BelongPsd";
         public const string SLICE = "Slice";
