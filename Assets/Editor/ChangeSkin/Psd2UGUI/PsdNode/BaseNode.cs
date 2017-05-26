@@ -30,6 +30,10 @@ namespace Psd2UGUI
             }
         }
 
+        protected GameObject CreateGameObject(string name)
+        {
+        }
+
         protected GameObject CreateGameObject(Transform parent)
         {
             GameObject go = new GameObject();

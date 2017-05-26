@@ -8,13 +8,14 @@ namespace Psd2UGUI
         public const string IMAGE_FOLDER = "imagefolder";
         public const string MASK = "mask";
         public const string BUTTON = "button";
+        public const string ENTER_EXIT_BUTTON = "enterexitbutton";
         public const string SCROLL_VIEW = "scrollview";
         public const string TOGGLE_GROUP = "togglegroup";
         public const string TOGGLE= "toggle";
         public const string LIST = "list";
         public const string CONTAINER = "container";
         public const string INPUT = "input";
-        public const string ENTER_EXIT_BUTTON = "enterexitbutton";
+        public const string CANVAS = "canvas";
 
         public const string PLACEHOLDER = "placeholder";
     }

@@ -42,6 +42,12 @@ namespace Psd2UGUI
                 case NodeType.INPUT:
                     result = new InputNode(jsonData);
                     break;
+                case NodeType.CANVAS:
+                    result = new CanvasNode(jsonData);
+                    break;
+                case NodeType.TOGGLE_GROUP:
+                    result = new ToggleGroupNode(jsonData);
+                    break;
                 default:
                     result = new ContainerNode(jsonData);
                     break;

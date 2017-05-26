@@ -18,6 +18,8 @@ namespace Psd2UGUI
 
         public const string HIDE = "Hide";
         public const string MASK = "Mask";
+
+        //Canvas
         public const string CANVAS = "Canvas";
 
         //Button
