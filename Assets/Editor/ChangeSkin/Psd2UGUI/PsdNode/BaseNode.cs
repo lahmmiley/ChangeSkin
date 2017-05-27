@@ -30,22 +30,25 @@ namespace Psd2UGUI
             }
         }
 
-        protected GameObject CreateGameObject(string name)
-        {
-        }
-
-        protected GameObject CreateGameObject(Transform parent)
+        protected GameObject CreateGameObject(string name, 
+            float width, float height, float x, float y)
         {
             GameObject go = new GameObject();
-            go.name = Name;
             go.layer = LayerMask.NameToLayer("UI");
+            go.name = name;
             RectTransform rect = go.AddComponent<RectTransform>();
             rect.localScale = Vector3.one;
             rect.pivot = Vector2.up;
             rect.anchorMax = Vector2.up;
             rect.anchorMin = Vector2.up;
-            rect.sizeDelta = new Vector2(Width, Height);
-            rect.anchoredPosition3D = new Vector3(X, -Y, 0);
+            rect.sizeDelta = new Vector2(width, height);
+            rect.anchoredPosition3D = new Vector3(x, y, 0);
+            return go;
+        }
+
+        protected GameObject CreateGameObject(Transform parent)
+        {
+            GameObject go = CreateGameObject(Name, Width, Height, X, -Y);
             go.transform.SetParent(parent, false);
             if(this.Hide)
             {

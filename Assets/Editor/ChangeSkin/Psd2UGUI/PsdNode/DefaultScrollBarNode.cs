@@ -10,28 +10,32 @@ namespace Psd2UGUI
 {
     public class DefaultScrollBarNode : BaseNode
     {
-        public DefaultScrollBarNode(JsonData jsonData) : base(jsonData)
-        {
-        }
+        public DefaultScrollBarNode(JsonData jsonData) : base(jsonData) {}
 
         public override void Build(Transform parent)
         {
             GameObject go = CreateGameObject(parent);
 
             GameObject handle = CreateHandle();
-
+            GameObject slidingArea = CreateSlidingArea();
+            handle.transform.SetParent(slidingArea.transform);
+            slidingArea.transform.SetParent(go.transform);
             Scrollbar scrollbar = go.AddComponent<Scrollbar>();
+            scrollbar.direction = Scrollbar.Direction.LeftToRight;
+            scrollbar.handleRect = handle.GetComponent<RectTransform>();
         }
 
         private GameObject CreateHandle()
         {
-            GameObject go = new GameObject();
-            go.name = "Handle";
-            RectTransform rect = go.AddComponent<RectTransform>();
-            rect.localScale = Vector3.one;
-            rect.pivot = Vector2.up;
-            rect.anchorMax = Vector2.up;
-            rect.anchorMin = Vector2.up;
+            GameObject goHandle = CreateGameObject("Handle", 0, 0, 0, 0);
+            Image image = goHandle.AddComponent<Image>();
+            return goHandle;
+        }
+
+        private GameObject CreateSlidingArea()
+        {
+            GameObject goSlidingArea = CreateGameObject("Sliding Area", 0, 0, 0, 0);
+            return goSlidingArea;
         }
     }
 }

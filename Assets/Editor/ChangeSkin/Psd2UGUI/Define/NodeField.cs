@@ -22,6 +22,9 @@ namespace Psd2UGUI
         //Canvas
         public const string CANVAS = "Canvas";
 
+        //ScrollRect
+        public const string DIRECTION = "Direction";
+
         //Button
         public const string SCALE = "Scale";
         public const string COLOR_TINT = "ColorTint";
