@@ -34,6 +34,10 @@ namespace Psd2UGUI
             {
                 Mask mask = go.AddComponent<Mask>();
                 mask.showMaskGraphic = false;
+
+                Image image = go.GetComponent<Image>();
+                Color color = image.color;
+                image.color = new Color(color.r, color.g, color.b, 1);
             }
 
             //重新计算坐标

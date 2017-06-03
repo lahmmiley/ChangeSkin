@@ -33,11 +33,17 @@ namespace Psd2UGUI
                 case NodeType.ENTER_EXIT_BUTTON:
                     result = new EnterExitButtonNode(jsonData);
                     break;
+                case NodeType.CUSTOM_BUTTON:
+                    result = new CustomButtonNode(jsonData);
+                    break;
                 case NodeType.TOGGLE:
                     result = new ToggleNode(jsonData);
                     break;
                 case NodeType.SCROLL_VIEW:
                     result = new ScrollViewNode(jsonData);
+                    break;
+                case NodeType.SCROLL_RECT:
+                    result = new ScrollRectNode(jsonData);
                     break;
                 case NodeType.INPUT:
                     result = new InputNode(jsonData);
@@ -47,6 +53,9 @@ namespace Psd2UGUI
                     break;
                 case NodeType.TOGGLE_GROUP:
                     result = new ToggleGroupNode(jsonData);
+                    break;
+                case NodeType.DEFAULT_SCROLL_BAR:
+                    result = new DefaultScrollBarNode(jsonData);
                     break;
                 default:
                     result = new ContainerNode(jsonData);

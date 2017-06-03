@@ -2,8 +2,11 @@ using LitJson;
 using Psd2UGUI;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
@@ -120,7 +123,51 @@ namespace Tool
                     _getSilceDict(children[i], dict);
                 }
             }
+        }
 
+        public static bool IsSameImage(string firstFilePath, string secondFilePath)
+        {
+            if(File.Exists(firstFilePath) && (File.Exists(secondFilePath)))
+            {
+                return IsSameImage(new Bitmap(firstFilePath), new Bitmap(secondFilePath));
+            }
+            return false;
+        }
+
+        public static bool IsSameImage(Bitmap firstBitmap, Bitmap secondBitmap)
+        {
+            bool sameImage = true;
+            if (firstBitmap.Width == secondBitmap.Width && firstBitmap.Height == secondBitmap.Height)
+            {
+                byte[] firstImageBytes = GetImageBytes(firstBitmap);
+                byte[] secondImageBytes = GetImageBytes(secondBitmap);
+                for (int i = 0; i < firstImageBytes.Length; i++)
+                {
+                    if (firstImageBytes[i] != secondImageBytes[i])
+                    {
+                        sameImage = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                sameImage = false;
+            }
+            firstBitmap.Dispose();
+            secondBitmap.Dispose();
+            return sameImage;
+        }
+
+        private static byte[] GetImageBytes(Bitmap bitmap)
+        {
+            BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppRgb);
+            IntPtr intPointer = bitmapData.Scan0;
+            int length = bitmapData.Width * bitmapData.Height * 4;
+            byte[] imgValue_i = new byte[length];
+            Marshal.Copy(intPointer, imgValue_i, 0, length);
+            bitmap.UnlockBits(bitmapData);
+            return imgValue_i;
         }
     }
 }

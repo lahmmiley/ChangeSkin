@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using Tool;
 using UnityEditor;
@@ -25,6 +28,100 @@ namespace Psd2UGUI
         static string dependAssetTarget = "Assets/AssetBundle/image.ab";
         static string mainAssetPath = "Assets/AssetBundle/gg.prefab";
         static string mainAssetTarget = "Assets/AssetBundle/gg.ab";
+
+        [MenuItem("Psd2UGUI/图片比较")]
+        private static void PictureCompare()
+        {
+            string[] fileNameArray = new string[] { "Button1.png", "Button2.png", "Button3.png", "Button4.png" };
+            for (int i = 0; i < fileNameArray.Length; i++)
+            {
+                string fileName = fileNameArray[i];
+                Bitmap firstImage = new Bitmap("Assets/PsdResources/Image/Base/" + fileName);
+                Bitmap secondImage = new Bitmap("Assets/Textures/UI/BaseXX_/" + fileName);
+                Debug.LogError(IsSameImg(firstImage, secondImage));
+                Debug.LogError(ImageCompareArray(firstImage, secondImage));
+            }
+        }
+
+        public static bool ImageCompareArray(Bitmap firstImage, Bitmap secondImage)  
+        {
+           bool flag = true;  
+           string firstPixel;  
+           string secondPixel;  
+         
+           if (firstImage.Width == secondImage.Width  
+               && firstImage.Height == secondImage.Height)  
+           {  
+                for (int i = 0; i < firstImage.Width; i++)  
+                {  
+                    for (int j = 0; j < firstImage.Height; j++)  
+                    {  
+                        firstPixel = firstImage.GetPixel(i, j).ToString();  
+                        secondPixel = secondImage.GetPixel(i, j).ToString();  
+                        if (firstPixel != secondPixel)  
+                        {  
+                            flag = false;  
+                            break;  
+                        }  
+                    }  
+                }  
+          
+                if (flag == false)  
+                {  
+                    return false;  
+                }  
+                else  
+                {  
+                    return true;  
+                }  
+            }  
+            else  
+            {  
+                return false;  
+            }  
+        }  
+
+        public static bool IsSameImg(Bitmap img, Bitmap bmp)
+        {
+            //大小一致
+            if (img.Width == bmp.Width && img.Height == bmp.Height)
+            {
+                byte[] firstImageBytes = GetImageBytes(img);
+                byte[] secondImageBytes = GetImageBytes(bmp);
+                if (firstImageBytes.Length != secondImageBytes.Length)
+                {
+                    return false;
+                }
+                else
+                {
+                    //循环判断值
+                    for (int i = 0; i < firstImageBytes.Length; i++)
+                    {
+                        //不一致
+                        if (firstImageBytes[i] != secondImageBytes[i])
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private static byte[] GetImageBytes(Bitmap bitmap)
+        {
+            BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format32bppRgb);
+            IntPtr intPointer = bitmapData.Scan0;
+            int length = bitmapData.Width * bitmapData.Height * 4;
+            byte[] imgValue_i = new byte[length];
+            Marshal.Copy(intPointer, imgValue_i, 0, length);
+            bitmap.UnlockBits(bitmapData);
+            return imgValue_i;
+        }
 
         [MenuItem("GameObject/复制路径")]
         private static void Test2()

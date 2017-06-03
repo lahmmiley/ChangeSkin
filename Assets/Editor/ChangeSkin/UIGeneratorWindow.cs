@@ -21,7 +21,6 @@ namespace AssetManager
         private Object _jsonFile;
         private Object _newPrefab;
         private Object _oldPrefab;
-        private Object _referencePrefab;
         private Object _createPrefab;
 
         private void OnGUI()
@@ -59,33 +58,11 @@ namespace AssetManager
                     GameObject goCreate = CloneNewPrefab(_newPrefab);
                     SyncPrefab.ComparePrefab(_oldPrefab as GameObject, goCreate as GameObject);
                 }
+                if(GUILayout.Button("对比预设", GUILayout.Width(100)))
+                {
+
+                }
             }
-
-            _referencePrefab = EditorGUILayout.ObjectField("referencePrefab:", _referencePrefab, typeof(Object), true);
-
-            if(GUILayout.Button("保存参照预设", GUILayout.Width(100)))
-            {
-                SavePrefab(_referencePrefab);
-            }
-
-            //if(GUILayout.Button("生成参照预设", GUILayout.Width(100)))
-            //{
-            //    GameObject goCreate = CloneNewPrefab(_newPrefab);
-            //    SyncPrefab.ComparePrefab(_referencePrefab as GameObject, goCreate as GameObject);
-            //}
-            //_createPrefab = EditorGUILayout.ObjectField("createPrefab:", _createPrefab, typeof(Object), true);
-        }
-
-        private void SavePrefab(Object prefab)
-        {
-            string dir = "Assets/Prefabs/UIReference/Backpack/";
-            if(!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-            string path = dir + prefab.name + ".prefab";
-            PrefabUtility.CreatePrefab(path, prefab as GameObject, ReplacePrefabOptions.ConnectToPrefab);
-            AssetDatabase.Refresh();
         }
 
         private GameObject CloneNewPrefab(Object newPrefab)

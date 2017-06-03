@@ -19,7 +19,7 @@ namespace Psd2UGUI
             if(jsonData.ContainKey(NodeField.CANVAS))
             {
                 _addCanvas = true;
-                _sortingOrder = int.Parse(jsonData.ContainKey(NodeField.CANVAS).ToString());
+                _sortingOrder = int.Parse(jsonData[NodeField.CANVAS].ToString());
             }
         }
 

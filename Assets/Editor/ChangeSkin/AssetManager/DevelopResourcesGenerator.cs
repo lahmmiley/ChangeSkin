@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using Tool;
 using UnityEditor;
@@ -16,9 +17,27 @@ namespace AssetManager
             string moveDir = FileUtility.TEXTURE_MODULE_ATLAS_DIR + FileUtility.RemovePostfix(jsonFileName) + FileUtility.XIUXIAN_POSTFIX + "_/";
             FileUtility.CreateDirectory(moveDir);
 
+            guidList = FilterSameImage(guidList, moveDir);
             DeleteExistTexture(guidList, moveDir);
             CopySourceTexture(guidList, jsonPath, moveDir);
             CreateRelativePrefab(jsonFileName, moveDir);
+        }
+
+        private static string[] FilterSameImage(string[] guidList, string moveDir)
+        {
+            List<string> result = new List<string>();
+            for(int i = 0; i < guidList.Length; i++)
+            {
+                string guid = guidList[i];
+                string sourcePath = AssetDatabase.GUIDToAssetPath(guid);
+                string fileName = FileUtility.GetFileNameWithPostfix(sourcePath);
+                string destPath = moveDir + fileName;
+                if(!FileUtility.IsSameImage(sourcePath, destPath))
+                {
+                    result.Add(guid);
+                }
+            }
+            return result.ToArray();
         }
 
         private static void DeleteExistTexture(string[] guidList, string moveDir)
@@ -27,8 +46,8 @@ namespace AssetManager
             {
                 string guid = guidList[i];
                 string sourcePath = AssetDatabase.GUIDToAssetPath(guid);
-                string fileName = FileUtility.GetFileName(sourcePath);
-                string destPath = moveDir + fileName + FileUtility.PNG_POSTFIX;
+                string fileName = FileUtility.GetFileNameWithPostfix(sourcePath);
+                string destPath = moveDir + fileName;
                 if(File.Exists(destPath))
                 {
                     File.Delete(destPath);
