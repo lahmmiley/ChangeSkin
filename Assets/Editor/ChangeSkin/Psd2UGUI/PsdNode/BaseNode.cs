@@ -42,6 +42,7 @@ namespace Psd2UGUI
             rect.anchorMax = Vector2.up;
             rect.anchorMin = Vector2.up;
             rect.sizeDelta = new Vector2(width, height);
+            rect.localScale = Vector3.one;
             rect.anchoredPosition3D = new Vector3(x, y, 0);
             return go;
         }

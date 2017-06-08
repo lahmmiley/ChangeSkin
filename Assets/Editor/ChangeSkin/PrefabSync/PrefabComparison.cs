@@ -10,10 +10,20 @@ namespace PrefabSync
 {
     public class PrefabComparison
     {
-        private static Dictionary<string, Type> checkTypeDict = new Dictionary<string,Type>()
+        private static Dictionary<string, Type> checkTypeDict = new Dictionary<string, Type>()
         {
             {NodeType.TEXT, typeof(Text)},
-        }
+            {NodeType.IMAGE, typeof(Image)},
+            {NodeType.MASK, typeof(Mask)},
+            {NodeType.BUTTON, typeof(Button)},
+            {NodeType.CUSTOM_BUTTON, typeof(CustomButton)},
+            {NodeType.ENTER_EXIT_BUTTON, typeof(CustomEnterExsitButton)},
+            {NodeType.SCROLL_RECT, typeof(ScrollRect)},
+            {NodeType.TOGGLE, typeof(Toggle)},
+            {NodeType.TOGGLE_GROUP, typeof(ToggleGroup)},
+            {NodeType.INPUT, typeof(Input)},
+            {NodeType.CANVAS, typeof(Canvas)},
+        };
 
         private static HashSet<string> _addPathHash;
         private static HashSet<string> _inexistPathHash;

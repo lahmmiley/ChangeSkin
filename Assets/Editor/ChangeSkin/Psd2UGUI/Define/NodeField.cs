@@ -17,7 +17,6 @@ namespace Psd2UGUI
         public const string ATTACH = "Attach";
 
         public const string HIDE = "Hide";
-        public const string MASK = "Mask";
 
         //Canvas
         public const string CANVAS = "Canvas";
@@ -49,5 +48,11 @@ namespace Psd2UGUI
         public const string DROP_SHADOW_ANGLE = "DropShadowAngle";
         public const string DROP_SHADOW_DISTANCE = "DropShadowDistance";
         public const string DROP_SHADOW_COLOR = "DropShadowColor";
+
+        //Add Component
+        public const string MASK = "Mask";
+        public const string SIZE_FITTER = "SizeFitter";
+        public const string VERTICAL_LAYOUT = "VerticalLayout";
+        public const string ELEMENT = "Element";
     }
 }

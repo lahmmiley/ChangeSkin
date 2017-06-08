@@ -18,7 +18,9 @@ namespace Psd2UGUI
         public const string CONTAINER = "container";
         public const string INPUT = "input";
         public const string CANVAS = "canvas";
+        public const string SLIDER = "slider";
         public const string DEFAULT_SCROLL_BAR = "defaultscrollbar";
+        public const string GRID_LAYOUT = "gridlayout";
 
         public const string PLACEHOLDER = "placeholder";
     }

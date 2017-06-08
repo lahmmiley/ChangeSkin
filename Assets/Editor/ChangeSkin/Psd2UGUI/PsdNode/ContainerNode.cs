@@ -8,12 +8,27 @@ namespace Psd2UGUI
     public class ContainerNode : BaseNode
     {
         private bool _addMask = false;
+        private bool _addSizeFitter = false;
+        private bool _addVerticalLayout = false;
+        private bool _addElement = false;
 
         public ContainerNode(JsonData jsonData) : base(jsonData) 
         {
             if(jsonData.ContainKey(NodeField.MASK))
             {
                 _addMask = true;
+            }
+            if(jsonData.ContainKey(NodeField.SIZE_FITTER))
+            {
+                _addSizeFitter = true;
+            }
+            if(jsonData.ContainKey(NodeField.VERTICAL_LAYOUT))
+            {
+                _addVerticalLayout = true;
+            }
+            if(jsonData.ContainKey(NodeField.VERTICAL_LAYOUT))
+            {
+                _addElement = true;
             }
         }
 
@@ -38,6 +53,21 @@ namespace Psd2UGUI
                 Image image = go.GetComponent<Image>();
                 Color color = image.color;
                 image.color = new Color(color.r, color.g, color.b, 1);
+            }
+
+             if(_addSizeFitter)
+             {
+                 go.AddComponent<ContentSizeFitter>();
+             }
+
+             if(_addVerticalLayout)
+             {
+                 go.AddComponent<VerticalLayoutGroup>();
+             }
+
+            if(_addElement)
+            {
+                go.AddComponent<LayoutElement>();
             }
 
             //重新计算坐标

@@ -23,6 +23,7 @@ namespace Psd2UGUI
             Scrollbar scrollbar = go.AddComponent<Scrollbar>();
             scrollbar.direction = Scrollbar.Direction.LeftToRight;
             scrollbar.handleRect = handle.GetComponent<RectTransform>();
+            scrollbar.transition = Selectable.Transition.None;
         }
 
         private GameObject CreateHandle()

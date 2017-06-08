@@ -54,6 +54,12 @@ namespace Psd2UGUI
                 case NodeType.TOGGLE_GROUP:
                     result = new ToggleGroupNode(jsonData);
                     break;
+                case NodeType.SLIDER:
+                    result = new SliderNode(jsonData);
+                    break;
+                case NodeType.GRID_LAYOUT:
+                    result = new GridLayoutNode(jsonData);
+                    break;
                 case NodeType.DEFAULT_SCROLL_BAR:
                     result = new DefaultScrollBarNode(jsonData);
                     break;

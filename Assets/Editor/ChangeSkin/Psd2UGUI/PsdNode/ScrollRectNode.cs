@@ -37,18 +37,26 @@ namespace Psd2UGUI
             ScrollRect scrollRect = this.gameObject.AddComponent<ScrollRect>();
             scrollRect.horizontal = _horizontal;
             scrollRect.vertical = _vertical;
+            scrollRect.inertia = false;
+            scrollRect.decelerationRate = 0;
 
             Transform transformContainer = this.gameObject.transform.Find("Container");
-            scrollRect.content = transformContainer.GetComponent<RectTransform>();
+            if (transformContainer != null)
+            {
+                scrollRect.content = transformContainer.GetComponent<RectTransform>();
+            }
 
             Transform transformScrollbar = this.gameObject.transform.Find("Scrollbar");
-            if(_horizontal)
+            if (transformScrollbar != null)
             {
-                scrollRect.horizontalScrollbar = transformScrollbar.GetComponent<Scrollbar>();
-            }
-            if(_vertical)
-            {
-                scrollRect.verticalScrollbar = transformScrollbar.GetComponent<Scrollbar>();
+                if(_horizontal)
+                {
+                    scrollRect.horizontalScrollbar = transformScrollbar.GetComponent<Scrollbar>();
+                }
+                if(_vertical)
+                {
+                    scrollRect.verticalScrollbar = transformScrollbar.GetComponent<Scrollbar>();
+                }
             }
         }
     }
