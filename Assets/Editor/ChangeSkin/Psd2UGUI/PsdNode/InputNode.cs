@@ -31,7 +31,12 @@ namespace Psd2UGUI
         private Graphic GetPlaceholder()
         {
             Transform transform = this.gameObject.transform;
-            return transform.Find("Placeholder").GetComponent<Text>();
+            Transform placeholder = transform.Find("Placeholder");
+            if(placeholder != null)
+            {
+                return placeholder.GetComponent<Text>();
+            }
+            return null;
         }
     }
 }
