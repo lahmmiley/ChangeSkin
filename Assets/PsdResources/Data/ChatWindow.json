@@ -1,0 +1,453 @@
+{
+    "Name":"root", "Type":"container", "X":-1, "Y":-1, "Width":478, "Height":541, 
+        "Children":
+        [
+            {
+                "Name":"ChatWindowXX", "Type":"canvas", "X":-1, "Y":-1, "Width":478, "Height":541, "Canvas":11, 
+                    "Children":
+                    [
+                        {
+                            "Name":"MainContent", "Type":"container", "X":-1, "Y":-1, "Width":478, "Height":541, 
+                                "Children":
+                                [
+                                    {
+                                        "Name":"ScrollLock", "Type":"container", "X":9, "Y":429, "Width":64, "Height":37, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Toggle", "Type":"toggle", "X":9, "Y":429, "Width":64, "Height":37, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Label", "Type":"text", "X":29, "Y":429, "Width":32, "Height":18, "Size":15, "Color":"FFFFFF", "Text":"滚 动", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"Background", "Type":"container", "X":9, "Y":446, "Width":64, "Height":20, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Icon", "Type":"container", "X":7, "Y":443, "Width":26, "Height":26, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"chatLock", "Type":"image", "X":7, "Y":443, "Width":26, "Height":26, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Checkmark", "Type":"container", "X":9, "Y":446, "Width":64, "Height":20, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"chatLockBg", "Type":"image", "X":9, "Y":446, "Width":64, "Height":20, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,7,0,7"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"chatUnlockBg", "Type":"image", "X":9, "Y":446, "Width":64, "Height":20, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,7,0,7"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"ShowButton", "Type":"button", "X":447, "Y":232, "Width":21, "Height":38, "Scale":1.1, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"chatLeftArrow", "Type":"image", "X":447, "Y":232, "Width":21, "Height":38, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"ShieldCon", "Type":"container", "X":4, "Y":479, "Width":436, "Height":55, "Hide":1, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"TxtShield", "Type":"text", "X":138, "Y":498, "Width":171, "Height":19, "Size":16, "Color":"12637C", "Text":"当前无队伍，不能发言", "OneLine":1, "Orientation":"horizontal", "Align":"uppercenter"
+                                                },
+                                                {
+                                                    "Name":"btnChat2", "Type":"image", "X":4, "Y":479, "Width":436, "Height":55, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,4,0,4"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"RightPart", "Type":"container", "X":92, "Y":69, "Width":338, "Height":344, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"UnOpenCon", "Type":"container", "X":92, "Y":69, "Width":338, "Height":344, "Mask":1, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Button", "Type":"button", "X":184, "Y":367, "Width":166, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":217, "Y":379, "Width":97, "Height":24, "Size":20, "Color":"E2FDF7", "Text":"申请入帮派", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"Button5", "Type":"image", "X":184, "Y":367, "Width":166, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,33,0,33"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"chatGirl", "Type":"image", "X":112, "Y":146, "Width":318, "Height":238, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                            },
+                                                            {
+                                                                "Name":"TxtDesc1", "Type":"text", "X":98, "Y":83, "Width":241, "Height":61, "Size":17, "Color":"23707F", "Text":"你尚未加入帮派，加入帮\n派有每日帮派工资,公会商店\n，公会战等丰厚福利等着你哦~", "OneLine":0, "Orientation":"horizontal"
+                                                            },
+                                                            {
+                                                                "Name":"chatBg1", "Type":"image", "X":92, "Y":69, "Width":251, "Height":106, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"32,22,32,42"
+                                                            },
+                                                            {
+                                                                "Name":"PaneBg", "Type":"image", "X":92, "Y":69, "Width":338, "Height":344, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"3"
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"LeftPart", "Type":"container", "X":3, "Y":5, "Width":76, "Height":360, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Button6", "Type":"button", "X":3, "Y":316, "Width":76, "Height":49, "Hide":1, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":18, "Y":332, "Width":43, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"跨 服", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":316, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":316, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":317, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":317, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":318, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":318, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button5", "Type":"button", "X":3, "Y":254, "Width":76, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":19, "Y":271, "Width":42, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"系 统", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":254, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":254, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":255, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":255, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":256, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":256, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button4", "Type":"button", "X":3, "Y":192, "Width":76, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":18, "Y":208, "Width":43, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"场 景", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":192, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":192, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":193, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":193, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":194, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":194, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button3", "Type":"button", "X":3, "Y":129, "Width":76, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":19, "Y":145, "Width":42, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"队 伍", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":129, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":129, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":130, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":130, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":131, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":131, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button2", "Type":"button", "X":3, "Y":67, "Width":76, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":19, "Y":83, "Width":43, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"帮 派", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":67, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":67, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":68, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":68, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":69, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":69, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button1", "Type":"button", "X":3, "Y":5, "Width":76, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"label", "Type":"text", "X":18, "Y":21, "Width":43, "Height":23, "Size":19, "Color":"FFFFFF", "Text":"世 界", "OneLine":1, "Orientation":"horizontal", "DropShadowAlpha":75, "DropShadowAngle":120, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                            },
+                                                            {
+                                                                "Name":"NotifyPoint", "Type":"container", "X":64, "Y":5, "Width":15, "Height":15, "Hide":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":64, "Y":5, "Width":15, "Height":15, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":3, "Y":6, "Width":75, "Height":46, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatSelect", "Type":"image", "X":3, "Y":6, "Width":75, "Height":46, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"11,11,11,11"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":3, "Y":7, "Width":75, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatTypeButton", "Type":"image", "X":3, "Y":7, "Width":75, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"TopPart", "Type":"container", "X":16, "Y":482, "Width":425, "Height":50, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"SendButton", "Type":"button", "X":370, "Y":482, "Width":71, "Height":49, "ColorTint":1, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Text", "Type":"text", "X":384, "Y":496, "Width":45, "Height":23, "Size":19, "Color":"864A03", "Text":"发 送", "OneLine":1, "Orientation":"horizontal"
+                                                            },
+                                                            {
+                                                                "Name":"btnChatSend", "Type":"image", "X":370, "Y":482, "Width":71, "Height":49, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"MoreButton", "Type":"button", "X":319, "Y":483, "Width":50, "Height":49, "ColorTint":1, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"chatPlus", "Type":"image", "X":332, "Y":494, "Width":24, "Height":25, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                            },
+                                                            {
+                                                                "Name":"btnChat1", "Type":"image", "X":319, "Y":483, "Width":50, "Height":49, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"VoiceInput", "Type":"container", "X":16, "Y":483, "Width":302, "Height":49, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"VoiceInputButton", "Type":"enterexitbutton", "X":79, "Y":483, "Width":239, "Height":49, "ColorTint":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Label", "Type":"text", "X":151, "Y":497, "Width":88, "Height":21, "Size":18, "Color":"12637C", "Text":"按住  说话", "OneLine":1, "Orientation":"horizontal", "Align":"uppercenter"
+                                                                        },
+                                                                        {
+                                                                            "Name":"btnChat2", "Type":"image", "X":79, "Y":483, "Width":239, "Height":49, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,4,0,4"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"TextTypeButton", "Type":"button", "X":16, "Y":483, "Width":50, "Height":49, "ColorTint":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Image", "Type":"container", "X":28, "Y":491, "Width":25, "Height":31, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"chatVoiceIcon", "Type":"image", "X":28, "Y":491, "Width":25, "Height":31, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"btnChat1", "Type":"image", "X":16, "Y":483, "Width":50, "Height":49, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"TextInput", "Type":"container", "X":16, "Y":483, "Width":300, "Height":49, "Hide":1, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"VoiceTypeButton", "Type":"button", "X":16, "Y":483, "Width":50, "Height":49, "ColorTint":1, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"chatKeyboard", "Type":"image", "X":25, "Y":496, "Width":31, "Height":21, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        },
+                                                                        {
+                                                                            "Name":"btnChat1", "Type":"image", "X":16, "Y":483, "Width":50, "Height":49, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Input", "Type":"button", "X":81, "Y":483, "Width":235, "Height":47, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"InputField", "Type":"input", "X":93, "Y":497, "Width":212, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":93, "Y":497, "Width":212, "Height":21, "Size":18, "Color":"50808F", "Text":"鹰鹰鹰鹰鹰鹰鹰鹰鹰鹰鹰", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Placeholder", "Type":"text", "X":165, "Y":497, "Width":75, "Height":21, "Size":18, "Color":"50808F", "Text":"点击输入", "OneLine":1, "Orientation":"horizontal", "Align":"uppercenter"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"InputBg", "Type":"container", "X":81, "Y":483, "Width":235, "Height":47, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"chatInputBg", "Type":"image", "X":81, "Y":483, "Width":235, "Height":47, "Attach":1, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"3,3,3,3"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"chatBg", "Type":"image", "X":-1, "Y":-1, "Width":478, "Height":541, "BelongPsd":"ChatWindow", "Alpha":"255", "Slice":"0,67,0,192"
+                                    }
+                                ]
+                        }
+                    ]
+            }
+        ]
+}

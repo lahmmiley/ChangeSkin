@@ -1,0 +1,762 @@
+{
+    "Name":"root", "Type":"container", "X":0, "Y":0, "Width":960, "Height":540, 
+        "Children":
+        [
+            {
+                "Name":"BackpackWindow", "Type":"container", "X":0, "Y":0, "Width":960, "Height":540, 
+                    "Children":
+                    [
+                        {
+                            "Name":"BackpackEquipment", "Type":"container", "X":495, "Y":66, "Width":6, "Height":439, 
+                                "Children":
+                                [
+                                    {
+                                        "Name":"Switcher2", "Type":"button", "X":183, "Y":447, "Width":52, "Height":54, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"I18NFashionButton", "Type":"image", "X":183, "Y":447, "Width":52, "Height":54, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"Switcher1", "Type":"button", "X":332, "Y":447, "Width":52, "Height":54, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"I18NAttributeButton", "Type":"image", "X":332, "Y":447, "Width":52, "Height":54, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"PortraitEnter", "Type":"button", "X":258, "Y":447, "Width":52, "Height":54, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"I18N_Enter", "Type":"image", "X":258, "Y":447, "Width":52, "Height":54, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"EquipGirds", "Type":"container", "X":83, "Y":108, "Width":394, "Height":352, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Weapon", "Type":"container", "X":83, "Y":108, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":83, "Y":108, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":83, "Y":108, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":91, "Y":110, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":83, "Y":108, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":87, "Y":108, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":127, "Y":158, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":125, "Y":157, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":125, "Y":157, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":86, "Y":109, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Ring", "Type":"container", "X":83, "Y":178, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":83, "Y":178, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":83, "Y":178, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":91, "Y":180, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":83, "Y":178, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":87, "Y":178, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":127, "Y":228, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":125, "Y":227, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":125, "Y":227, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":86, "Y":179, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Necklace", "Type":"container", "X":83, "Y":249, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":83, "Y":249, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":83, "Y":249, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":91, "Y":251, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":83, "Y":249, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":87, "Y":249, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":127, "Y":299, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":125, "Y":298, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":125, "Y":298, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":86, "Y":250, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Bracelet", "Type":"container", "X":83, "Y":321, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":83, "Y":321, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":83, "Y":321, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":91, "Y":323, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":83, "Y":321, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":87, "Y":321, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":127, "Y":371, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":125, "Y":370, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":125, "Y":370, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":86, "Y":322, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"WingIcon", "Type":"container", "X":83, "Y":393, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":83, "Y":393, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":83, "Y":393, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":91, "Y":395, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":83, "Y":393, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":87, "Y":393, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":127, "Y":443, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":125, "Y":442, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":125, "Y":442, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":86, "Y":394, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Shoe", "Type":"container", "X":410, "Y":108, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":410, "Y":108, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":410, "Y":108, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":418, "Y":110, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":410, "Y":108, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":414, "Y":108, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":454, "Y":158, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":452, "Y":157, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":452, "Y":157, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":413, "Y":109, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Pants", "Type":"container", "X":410, "Y":178, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":410, "Y":178, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":410, "Y":178, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":418, "Y":180, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":410, "Y":178, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":414, "Y":178, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":454, "Y":228, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":452, "Y":227, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":452, "Y":227, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":413, "Y":179, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Belt", "Type":"container", "X":410, "Y":249, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":410, "Y":249, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":410, "Y":249, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":418, "Y":251, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":410, "Y":249, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":414, "Y":249, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":454, "Y":299, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":452, "Y":298, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":452, "Y":298, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":413, "Y":250, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Coat", "Type":"container", "X":410, "Y":321, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":410, "Y":321, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":410, "Y":321, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":418, "Y":323, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":410, "Y":321, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":414, "Y":321, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":454, "Y":371, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":452, "Y":370, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":452, "Y":370, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":413, "Y":322, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"MountIcon", "Type":"container", "X":410, "Y":393, "Width":67, "Height":67, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"ItemSlot", "Type":"container", "X":410, "Y":393, "Width":67, "Height":67, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"EquipLevel", "Type":"container", "X":410, "Y":393, "Width":31, "Height":21, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"Text", "Type":"text", "X":418, "Y":395, "Width":14, "Height":16, "Size":13, "Color":"083B4A", "Text":"20", "OneLine":1, "Orientation":"horizontal"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":410, "Y":393, "Width":31, "Height":21, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"Slot_EquipLevelBg", "Type":"image", "X":414, "Y":393, "Width":21, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        },
+                                                                        {
+                                                                            "Name":"Strengthen", "Type":"text", "X":454, "Y":443, "Width":21, "Height":17, "Size":14, "Color":"FFFFFF", "Text":"+17", "OneLine":1, "Orientation":"horizontal"
+                                                                        },
+                                                                        {
+                                                                            "Name":"StrengthBg", "Type":"container", "X":452, "Y":442, "Width":25, "Height":16, 
+                                                                                "Children":
+                                                                                [
+                                                                                    {
+                                                                                        "Name":"ItemBg13", "Type":"image", "X":452, "Y":442, "Width":25, "Height":16, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"156"
+                                                                                    },
+                                                                                    {
+                                                                                        "Name":"ItemDefault", "Type":"image", "X":413, "Y":394, "Width":67, "Height":66, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                                    }
+                                                                                ]
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"flower", "Type":"image", "X":21, "Y":465, "Width":97, "Height":64, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                    },
+                                    {
+                                        "Name":"Info", "Type":"button", "X":178, "Y":80, "Width":224, "Height":30, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"RoleNameText", "Type":"text", "X":241, "Y":86, "Width":161, "Height":20, "Size":17, "Color":"0C4E49", "Text":"草丛中的德玛  199级", "OneLine":1, "Orientation":"horizontal"
+                                                },
+                                                {
+                                                    "Name":"Classes", "Type":"container", "X":217, "Y":84, "Width":21, "Height":22, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"placeholder", "Type":"image", "X":217, "Y":84, "Width":21, "Height":22, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Rename", "Type":"container", "X":178, "Y":80, "Width":35, "Height":30, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Image", "Type":"image", "X":189, "Y":84, "Width":22, "Height":24, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"InfoIcon1", "Type":"image", "X":189, "Y":84, "Width":22, "Height":24, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"InfoIconBg2", "Type":"image", "X":178, "Y":80, "Width":35, "Height":30, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"RoleBg", "Type":"container", "X":0, "Y":0, "Width":0, "Height":0
+                                    },
+                                    {
+                                        "Name":"line4", "Type":"image", "X":495, "Y":66, "Width":6, "Height":439, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                    },
+                                    {
+                                        "Name":"WorldIcon", "Type":"button", "X":363, "Y":143, "Width":44, "Height":44, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"WorldIcon", "Type":"button", "X":353, "Y":211, "Width":44, "Height":44, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"placeholder", "Type":"image", "X":353, "Y":211, "Width":44, "Height":44, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                            },
+                                                            {
+                                                                "Name":"placeholder", "Type":"image", "X":353, "Y":168, "Width":51, "Height":44, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                            },
+                                                            {
+                                                                "Name":"placeholder", "Type":"image", "X":353, "Y":121, "Width":51, "Height":45, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"placeholder", "Type":"image", "X":363, "Y":143, "Width":44, "Height":44, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"Fight", "Type":"container", "X":192, "Y":160, "Width":207, "Height":289, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Container", "Type":"container", "X":253, "Y":426, "Width":67, "Height":23, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Value", "Type":"text", "X":253, "Y":426, "Width":67, "Height":23, "Size":19, "Color":"01655F", "Text":"3214501", "OneLine":1, "Orientation":"horizontal"
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Up", "Type":"container", "X":192, "Y":160, "Width":207, "Height":221, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Up", "Type":"container", "X":318, "Y":421, "Width":25, "Height":25, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"buffArrow2", "Type":"image", "X":318, "Y":421, "Width":25, "Height":25, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"PaneBg", "Type":"image", "X":192, "Y":160, "Width":207, "Height":221, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"3"
+                                                            },
+                                                            {
+                                                                "Name":"Red", "Type":"container", "X":333, "Y":411, "Width":21, "Height":20, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"RedPoint", "Type":"image", "X":333, "Y":411, "Width":21, "Height":20, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"I18Nping1", "Type":"image", "X":226, "Y":422, "Width":23, "Height":24, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"xxTextBg1", "Type":"image", "X":219, "Y":414, "Width":125, "Height":38, "BelongPsd":"BackpackWindow", "Alpha":"212"
+                                    },
+                                    {
+                                        "Name":"placeholder", "Type":"image", "X":110, "Y":20, "Width":370, "Height":500, "BelongPsd":"BackpackWindow", "Alpha":"3"
+                                    }
+                                ]
+                        },
+                        {
+                            "Name":"Panel", "Type":"button", "X":0, "Y":0, "Width":960, "Height":540, 
+                                "Children":
+                                [
+                                    {
+                                        "Name":"PaneBg", "Type":"image", "X":0, "Y":0, "Width":960, "Height":540, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"3"
+                                    }
+                                ]
+                        },
+                        {
+                            "Name":"Main", "Type":"container", "X":46, "Y":25, "Width":893, "Height":494, 
+                                "Children":
+                                [
+                                    {
+                                        "Name":"TabButtonGroup", "Type":"container", "X":871, "Y":100, "Width":68, "Height":369, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Button", "Type":"button", "X":871, "Y":100, "Width":65, "Height":88, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":871, "Y":100, "Width":48, "Height":87, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":883, "Y":118, "Width":23, "Height":52, "Size":20, "Color":"C9FAFF", "Text":"背  包", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Normal", "Type":"image", "X":871, "Y":100, "Width":48, "Height":87, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":871, "Y":100, "Width":65, "Height":88, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":884, "Y":118, "Width":24, "Height":55, "Size":22, "Color":"FFFFFF", "Text":"背  包", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Select", "Type":"image", "X":871, "Y":100, "Width":65, "Height":88, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button", "Type":"button", "X":871, "Y":193, "Width":65, "Height":88, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":871, "Y":193, "Width":48, "Height":87, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":882, "Y":212, "Width":24, "Height":52, "Size":20, "Color":"C9FAFF", "Text":"信  息", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Normal", "Type":"image", "X":871, "Y":193, "Width":48, "Height":87, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":871, "Y":193, "Width":65, "Height":88, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":883, "Y":212, "Width":26, "Height":57, "Size":22, "Color":"FFFFFF", "Text":"信  息", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Select", "Type":"image", "X":871, "Y":193, "Width":65, "Height":88, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button", "Type":"button", "X":871, "Y":286, "Width":68, "Height":88, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":871, "Y":286, "Width":48, "Height":87, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":882, "Y":305, "Width":23, "Height":52, "Size":20, "Color":"C9FAFF", "Text":"翅  膀", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Normal", "Type":"image", "X":871, "Y":286, "Width":48, "Height":87, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":874, "Y":286, "Width":65, "Height":88, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":886, "Y":304, "Width":25, "Height":56, "Size":22, "Color":"FFFFFF", "Text":"翅  膀", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Select", "Type":"image", "X":874, "Y":286, "Width":65, "Height":88, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                },
+                                                {
+                                                    "Name":"Button", "Type":"button", "X":871, "Y":381, "Width":68, "Height":88, 
+                                                        "Children":
+                                                        [
+                                                            {
+                                                                "Name":"Normal", "Type":"container", "X":871, "Y":381, "Width":48, "Height":87, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":883, "Y":399, "Width":23, "Height":52, "Size":20, "Color":"C9FAFF", "Text":"宝  物", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Normal", "Type":"image", "X":871, "Y":381, "Width":48, "Height":87, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            },
+                                                            {
+                                                                "Name":"Select", "Type":"container", "X":874, "Y":381, "Width":65, "Height":88, 
+                                                                    "Children":
+                                                                    [
+                                                                        {
+                                                                            "Name":"Text", "Type":"text", "X":887, "Y":399, "Width":24, "Height":56, "Size":22, "Color":"FFFFFF", "Text":"宝  物", "OneLine":1, "Orientation":"vertical", "DropShadowAlpha":75, "DropShadowAngle":90, "DropShadowDistance":1, "DropShadowColor":"000000"
+                                                                        },
+                                                                        {
+                                                                            "Name":"TabButton1Select", "Type":"image", "X":874, "Y":381, "Width":65, "Height":88, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                                        }
+                                                                    ]
+                                                            }
+                                                        ]
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"CloseButton", "Type":"button", "X":844, "Y":34, "Width":52, "Height":54, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"WindowsCloseButton", "Type":"image", "X":844, "Y":34, "Width":52, "Height":54, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"Title", "Type":"container", "X":46, "Y":25, "Width":225, "Height":102, 
+                                            "Children":
+                                            [
+                                                {
+                                                    "Name":"Text", "Type":"image", "X":142, "Y":42, "Width":64, "Height":20, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                },
+                                                {
+                                                    "Name":"WindowTitleBg", "Type":"image", "X":46, "Y":25, "Width":225, "Height":102, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                                }
+                                            ]
+                                    },
+                                    {
+                                        "Name":"WindowBg1", "Type":"image", "X":60, "Y":57, "Width":847, "Height":462, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                    },
+                                    {
+                                        "Name":"WindowBg1", "Type":"image", "X":60, "Y":57, "Width":847, "Height":462, "BelongPsd":"BackpackWindow", "Alpha":"255"
+                                    }
+                                ]
+                        },
+                        {
+                            "Name":"placeholder", "Type":"image", "X":0, "Y":0, "Width":960, "Height":540, "Attach":1, "BelongPsd":"BackpackWindow", "Alpha":"3"
+                        }
+                    ]
+            }
+        ]
+}
