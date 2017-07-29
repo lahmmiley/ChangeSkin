@@ -26,10 +26,9 @@ namespace Psd2UGUI
         public void Create(string name)
         {
             CurrentName = name;
+            ImageDataReader.Instance.Read(name);
 
-            StreamReader sr = new StreamReader(string.Format("{0}{1}{2}", FileUtility.UI_DATA_DIR, name, FileUtility.JSON_POSTFIX));
-            string content = sr.ReadToEnd();
-            JsonData jsonData = JsonMapper.ToObject(content);
+            JsonData jsonData = FileUtility.ReadJsonData(string.Format("{0}{1}{2}", FileUtility.UI_DATA_DIR, name, FileUtility.JSON_POSTFIX));
             BaseNode root = CreateNodeTree(jsonData);
             GameObject goParent = GameObject.Find("Canvas/New");
             root.Build(goParent.transform);
@@ -42,9 +41,9 @@ namespace Psd2UGUI
             node.ProcessStruct(jsonData);
             if(jsonData.Keys.Contains(NodeField.CHILDREN))
             {
-                int length = jsonData[NodeField.CHILDREN].Count;
-                node.Children = new BaseNode[length];
                 JsonData children = jsonData[NodeField.CHILDREN];
+                int length = children.Count;
+                node.Children = new BaseNode[length];
                 for(int i = 0; i < length; i++)
                 {
                     node.Children[i] =  CreateNodeTree(children[i]);

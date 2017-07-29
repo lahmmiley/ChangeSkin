@@ -4,7 +4,10 @@ using System.IO;
 using Tool;
 using UnityEditor;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 using Object = UnityEngine.Object;
+using UnityEngine.UI;
 
 namespace AssetManager
 {
@@ -60,7 +63,7 @@ namespace AssetManager
                 }
                 if(GUILayout.Button("对比预设", GUILayout.Width(100)))
                 {
-
+                    NewOldComparer.Compare(_oldPrefab as GameObject, _newPrefab as GameObject);
                 }
             }
         }

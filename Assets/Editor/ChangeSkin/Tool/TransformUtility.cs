@@ -8,6 +8,8 @@ namespace Tool
 {
     public static class TransformUtility
     {
+        public static Vector2 HalfVector2 = new Vector2(0.5f, 0.5f);
+
         public static void SetAnchorMinX(RectTransform rect, float x)
         {
             float y = rect.anchorMin.y;
@@ -78,6 +80,29 @@ namespace Tool
         {
             float x = rect.offsetMax.x;
             rect.offsetMax = new Vector2(x, y);
+        }
+
+        public static void MoveX(RectTransform rect, float x)
+        {
+            Vector3 position = rect.anchoredPosition3D;
+            rect.anchoredPosition3D = new Vector3(position.x + x, position.y, position.z);
+        }
+
+        public static void MoveY(RectTransform rect, float y)
+        {
+            Vector3 position = rect.anchoredPosition3D;
+            rect.anchoredPosition3D = new Vector3(position.x, position.y + y, position.z);
+        }
+
+        public static void SetPivot(RectTransform rect, Vector2 newPivot)
+        {
+            Vector2 sizeDelta = rect.sizeDelta;
+            Vector2 oldPivot = rect.pivot;
+            rect.pivot = newPivot;
+            Vector3 position = rect.anchoredPosition;
+            float newX = position.x + sizeDelta.x * (newPivot.x - oldPivot.x);
+            float newY = position.y + sizeDelta.y * (newPivot.y - oldPivot.y);
+            rect.anchoredPosition = new Vector2(newX, newY);
         }
     }
 }

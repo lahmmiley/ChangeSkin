@@ -25,15 +25,23 @@ namespace Psd2UGUI
         private Graphic GetTargetGraphic()
         {
             Transform transform = this.gameObject.transform;
-            Image imageBackground = transform.Find("Background").GetComponent<Image>();
-            return imageBackground;
+            if(transform.Find("Background") != null)
+            {
+                Image imageBackground = transform.Find("Background").GetComponent<Image>();
+                return imageBackground;
+            }
+            return transform.GetComponent<Image>();
         }
 
         private Graphic GetGraphic()
         {
             Transform transform = this.gameObject.transform;
-            Image imageCheckmark = transform.Find("Background/Checkmark").GetComponent<Image>();
-            return imageCheckmark;
+            if(transform.Find("Background") != null)
+            {
+                Image imageCheckmark = transform.Find("Background/Checkmark").GetComponent<Image>();
+                return imageCheckmark;
+            }
+            return transform.Find("Checkmark").GetComponent<Image>();
         }
     }
 }

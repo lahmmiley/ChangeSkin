@@ -32,15 +32,18 @@ namespace Psd2UGUI
         [MenuItem("Psd2UGUI/图片比较")]
         private static void PictureCompare()
         {
-            string[] fileNameArray = new string[] { "Button1.png", "Button2.png", "Button3.png", "Button4.png" };
-            for (int i = 0; i < fileNameArray.Length; i++)
-            {
-                string fileName = fileNameArray[i];
-                Bitmap firstImage = new Bitmap("Assets/PsdResources/Image/Base/" + fileName);
-                Bitmap secondImage = new Bitmap("Assets/Textures/UI/BaseXX_/" + fileName);
-                Debug.LogError(IsSameImg(firstImage, secondImage));
-                Debug.LogError(ImageCompareArray(firstImage, secondImage));
-            }
+            Debug.LogError((ImageNode.Mirror)Enum.Parse(typeof(ImageNode.Mirror), "up"));
+            //GameObject go = GameObject.Find("Canvas/BuyButton/BuyButton");
+            //TransformUtility.SetPivot(go.GetComponent<RectTransform>(), new Vector2(1, 1));
+            //string[] fileNameArray = new string[] { "Button1.png", "Button2.png", "Button3.png", "Button4.png" };
+            //for (int i = 0; i < fileNameArray.Length; i++)
+            //{
+            //    string fileName = fileNameArray[i];
+            //    Bitmap firstImage = new Bitmap("Assets/PsdResources/Image/Base/" + fileName);
+            //    Bitmap secondImage = new Bitmap("Assets/Textures/UI/BaseXX_/" + fileName);
+            //    Debug.LogError(IsSameImg(firstImage, secondImage));
+            //    Debug.LogError(ImageCompareArray(firstImage, secondImage));
+            //}
         }
 
         public static bool ImageCompareArray(Bitmap firstImage, Bitmap secondImage)  

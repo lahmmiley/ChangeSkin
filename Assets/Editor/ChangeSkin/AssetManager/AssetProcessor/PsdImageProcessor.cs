@@ -23,6 +23,10 @@ namespace AssetManager
             textureImporter.mipmapEnabled = false;
             textureImporter.wrapMode = TextureWrapMode.Clamp;
             textureImporter.isReadable = true;
+
+            int maxSize = 1024;
+            textureImporter.SetPlatformTextureSettings("Default", maxSize, TextureImporterFormat.ARGB32);
+            textureImporter.SetPlatformTextureSettings("Standalone", maxSize, TextureImporterFormat.ARGB32);
         }
 
         public override void PostFormatTexture(Texture2D texture, TextureImporter textureImporter)

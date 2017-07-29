@@ -21,9 +21,11 @@ namespace Tool
         public const string TEXTURE_DIR = "Assets/Textures/";
         public const string TEXTURE_MODULE_ATLAS_DIR = "Assets/Textures/UI/";
         public const string MAP_DIR = "Assets/Textures/Maps/";
+		public const string MINIMAPS_DIR = "Assets/Textures/Maps/MiniMaps";
 
         public const string RESOURCE_SPRITE_DIR = "Assets/Resources/Sprite/";
 
+        public const string IMAGE_DATA = "ImageData";
         public const string JSON_POSTFIX = ".json";
         public const string PNG_POSTFIX = ".png";
         public const string PREFAB_POSTFIX = ".prefab";
@@ -88,6 +90,13 @@ namespace Tool
             {
                 Directory.Delete(dir, true);
             }
+        }
+
+        public static JsonData ReadJsonData(string jsonPath)
+        {
+            StreamReader sr = new StreamReader(jsonPath);
+            string content = sr.ReadToEnd();
+            return JsonMapper.ToObject(content);
         }
 
         public static Dictionary<string, string[]> GetSliceDict(string jsonPath)

@@ -37,8 +37,6 @@ namespace Psd2UGUI
             ScrollRect scrollRect = this.gameObject.AddComponent<ScrollRect>();
             scrollRect.horizontal = _horizontal;
             scrollRect.vertical = _vertical;
-            scrollRect.inertia = false;
-            scrollRect.decelerationRate = 0;
 
             Transform transformContainer = this.gameObject.transform.Find("Container");
             if (transformContainer != null)
