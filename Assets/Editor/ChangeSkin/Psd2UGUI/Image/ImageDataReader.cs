@@ -28,10 +28,9 @@ namespace Psd2UGUI
 
         public void Read(string name)
         {
-            JsonData jsonData = FileUtility.ReadJsonData(string.Format("{0}{1}{2}{3}", FileUtility.UI_DATA_DIR, name, FileUtility.IMAGE_DATA, FileUtility.JSON_POSTFIX));
+            JsonData jsonData = FileUtility.ReadJsonData(string.Format("{0}{1}{2}", FileUtility.IMAGE_DATA_DIR, name, FileUtility.JSON_POSTFIX));
             _imageDataDict = new Dictionary<string,ImageData>();
 
-            Debug.LogError(jsonData.Count);
             for(int i = 0; i < jsonData.Count; i++)
             {
                 ImageData imageData = new ImageData(jsonData[i]);

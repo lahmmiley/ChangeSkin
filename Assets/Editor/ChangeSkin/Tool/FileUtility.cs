@@ -18,6 +18,7 @@ namespace Tool
     {
         public const string PSD_IMAGE_DIR = "Assets/PsdResources/Image/";
         public static string UI_DATA_DIR = PSD_IMAGE_DIR.Replace("Image", "Data");
+        public static string IMAGE_DATA_DIR = PSD_IMAGE_DIR.Replace("Image", "ImageData");
         public const string TEXTURE_DIR = "Assets/Textures/";
         public const string TEXTURE_MODULE_ATLAS_DIR = "Assets/Textures/UI/";
         public const string MAP_DIR = "Assets/Textures/Maps/";
@@ -25,7 +26,6 @@ namespace Tool
 
         public const string RESOURCE_SPRITE_DIR = "Assets/Resources/Sprite/";
 
-        public const string IMAGE_DATA = "ImageData";
         public const string JSON_POSTFIX = ".json";
         public const string PNG_POSTFIX = ".png";
         public const string PREFAB_POSTFIX = ".prefab";

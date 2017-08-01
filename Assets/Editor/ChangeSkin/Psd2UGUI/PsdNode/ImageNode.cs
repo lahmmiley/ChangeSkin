@@ -82,24 +82,40 @@ namespace Psd2UGUI
             {
                 RectTransform rect = go.GetComponent<RectTransform>();
                 Mirror originMirror = ImageDataReader.Instance.GetMirror(Name);
-                go.name = _mirror.ToString();
-                int originMirroValue = (int)originMirror;
+                int originMirrorValue = (int)originMirror;
                 int selfMirroValue = (int)_mirror;
-                if(originMirroValue != selfMirroValue)
+                if(originMirrorValue != selfMirroValue)
                 {
                     TransformUtility.SetPivot(rect, TransformUtility.HalfVector2);
-                    if((originMirroValue % 2) != (selfMirroValue % 2))
+                    int mod = ((selfMirroValue + 4) - originMirrorValue) % 4;
+                    if(mod == 1)
+                    {
+                        ChangeLocalScale(rect, originMirrorValue);
+                        rect.Rotate(0, 0, 90);
+                        SwapWidthHeight(rect);
+                    }
+                    else if(mod == 2)
+                    {
+                        ChangeLocalScale(rect, originMirrorValue);
+                    }
+                    else if(mod == 3)
                     {
                         rect.Rotate(0, 0, 90);
                         SwapWidthHeight(rect);
                     }
                 }
-                //if((originMirror == Mirror.up && _mirror == Mirror.down)
-                //    ||(originMirror == Mirror.down && _mirror == Mirror.up))
-                //{
-                //    rect.localScale = new Vector3(1, -1, 1);
-                //    TransformUtility.SetPivot(rect, Vector2.right);
-                //}
+            }
+        }
+
+        private void ChangeLocalScale(RectTransform rect, int originMirrorValue)
+        {
+            if(originMirrorValue % 2 == 1)
+            {
+                rect.localScale = new Vector3(1, -1, 1);
+            }
+            else
+            {
+                rect.localScale = new Vector3(-1, 1, 1);
             }
         }
 

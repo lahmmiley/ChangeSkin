@@ -31,8 +31,8 @@ namespace AssetManager
             textureImporter.anisoLevel = 1;
             int maxSize = 256;
             textureImporter.SetPlatformTextureSettings("Standalone", maxSize, TextureImporterFormat.AutomaticCompressed);
-            textureImporter.SetPlatformTextureSettings("iPhone", maxSize, TextureImporterFormat.PVRTC_RGBA4, 2);
-            textureImporter.SetPlatformTextureSettings("Android", maxSize, TextureImporterFormat.ETC_RGB4, 2);
+            //textureImporter.SetPlatformTextureSettings("iPhone", maxSize, TextureImporterFormat.PVRTC_RGBA4, 2);
+            //textureImporter.SetPlatformTextureSettings("Android", maxSize, TextureImporterFormat.ETC_RGB4, 2);
         }
 
         public override void PostFormatTexture(Texture2D texture, TextureImporter textureImporter)
