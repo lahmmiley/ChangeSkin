@@ -9,6 +9,7 @@ namespace Psd2UGUI
     {
         private bool _addMask = false;
         private bool _addSizeFitter = false;
+        private bool _addHorizontalLayout = false;
         private bool _addVerticalLayout = false;
         private bool _addElement = false;
 
@@ -22,11 +23,15 @@ namespace Psd2UGUI
             {
                 _addSizeFitter = true;
             }
+            if(jsonData.ContainKey(NodeField.HORIZONTAL_LAYOUT))
+            {
+                _addHorizontalLayout = true;
+            }
             if(jsonData.ContainKey(NodeField.VERTICAL_LAYOUT))
             {
                 _addVerticalLayout = true;
             }
-            if(jsonData.ContainKey(NodeField.VERTICAL_LAYOUT))
+            if(jsonData.ContainKey(NodeField.ELEMENT))
             {
                 _addElement = true;
             }
@@ -55,15 +60,20 @@ namespace Psd2UGUI
                 image.color = new Color(color.r, color.g, color.b, 1);
             }
 
-             if(_addSizeFitter)
-             {
-                 go.AddComponent<ContentSizeFitter>();
-             }
+            if(_addSizeFitter)
+            {
+                go.AddComponent<ContentSizeFitter>();
+            }
 
-             if(_addVerticalLayout)
-             {
-                 go.AddComponent<VerticalLayoutGroup>();
-             }
+            if(_addHorizontalLayout)
+            {
+                go.AddComponent<HorizontalLayoutGroup>();
+            }
+
+            if(_addVerticalLayout)
+            {
+                go.AddComponent<VerticalLayoutGroup>();
+            }
 
             if(_addElement)
             {

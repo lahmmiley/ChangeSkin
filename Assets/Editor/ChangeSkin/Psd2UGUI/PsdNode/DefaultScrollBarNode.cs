@@ -29,7 +29,7 @@ namespace Psd2UGUI
         private GameObject CreateHandle()
         {
             GameObject goHandle = CreateGameObject("Handle", 0, 0, 0, 0);
-            Image image = goHandle.AddComponent<Image>();
+            goHandle.AddComponent<Image>();
             return goHandle;
         }
 

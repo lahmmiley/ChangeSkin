@@ -40,6 +40,7 @@ namespace Psd2UGUI
             {
                 TransitionButton transitionButton = this.gameObject.AddComponent<TransitionButton>();
                 transitionButton.scaleRate = _scale;
+                TransformUtility.SetPivot(this.gameObject.GetComponent<RectTransform>(), TransformUtility.HalfVector2);
             }
         }
 

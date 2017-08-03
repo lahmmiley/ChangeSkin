@@ -31,7 +31,9 @@ namespace Psd2UGUI
         //Image
         public const string BELONG_PSD = "BelongPsd";
         public const string SLICE = "Slice";
+        public const string PRESERVER = "Preserver";
         public const string ALPHA = "Alpha";
+        public const string MIRROR = "Mirror";
 
         //Text
         public const string SIZE = "Size";
@@ -53,6 +55,7 @@ namespace Psd2UGUI
         public const string MASK = "Mask";
         public const string SIZE_FITTER = "SizeFitter";
         public const string VERTICAL_LAYOUT = "VerticalLayout";
+        public const string HORIZONTAL_LAYOUT = "HorizontalLayout";
         public const string ELEMENT = "Element";
     }
 }

@@ -10,20 +10,20 @@ namespace PrefabSync
 {
     public class PrefabComparison
     {
-        private static Dictionary<string, Type> checkTypeDict = new Dictionary<string, Type>()
-        {
-            {NodeType.TEXT, typeof(Text)},
-            {NodeType.IMAGE, typeof(Image)},
-            {NodeType.MASK, typeof(Mask)},
-            {NodeType.BUTTON, typeof(Button)},
-            {NodeType.CUSTOM_BUTTON, typeof(CustomButton)},
-            {NodeType.ENTER_EXIT_BUTTON, typeof(CustomEnterExsitButton)},
-            {NodeType.SCROLL_RECT, typeof(ScrollRect)},
-            {NodeType.TOGGLE, typeof(Toggle)},
-            {NodeType.TOGGLE_GROUP, typeof(ToggleGroup)},
-            {NodeType.INPUT, typeof(Input)},
-            {NodeType.CANVAS, typeof(Canvas)},
-        };
+        //private static Dictionary<string, Type> checkTypeDict = new Dictionary<string, Type>()
+        //{
+        //    {NodeType.TEXT, typeof(Text)},
+        //    {NodeType.IMAGE, typeof(Image)},
+        //    {NodeType.MASK, typeof(Mask)},
+        //    {NodeType.BUTTON, typeof(Button)},
+        //    {NodeType.CUSTOM_BUTTON, typeof(CustomButton)},
+        //    {NodeType.ENTER_EXIT_BUTTON, typeof(CustomEnterExsitButton)},
+        //    {NodeType.SCROLL_RECT, typeof(ScrollRect)},
+        //    {NodeType.TOGGLE, typeof(Toggle)},
+        //    {NodeType.TOGGLE_GROUP, typeof(ToggleGroup)},
+        //    {NodeType.INPUT, typeof(Input)},
+        //    {NodeType.CANVAS, typeof(Canvas)},
+        //};
 
         private static HashSet<string> _addPathHash;
         private static HashSet<string> _inexistPathHash;
@@ -33,12 +33,12 @@ namespace PrefabSync
             string path = string.Empty;
             _addPathHash = new HashSet<string>();
             _inexistPathHash = new HashSet<string>();
-            _traversalGameObject(path, goOld, goNew);
+            _traverseGameObject(path, goOld, goNew);
             //Printer.Print(_addPathHash, "新添加的路径\n");
             //Printer.Print(_inexistPathHash, "缺失的路径\n");
         }
 
-        private static void _traversalGameObject(string currentPath, GameObject goOld, GameObject goNew)
+        private static void _traverseGameObject(string currentPath, GameObject goOld, GameObject goNew)
         {
             RectTransform rectOld = goOld.GetComponent<RectTransform>();
             RectTransform rectNew = goNew.GetComponent<RectTransform>();
@@ -62,14 +62,13 @@ namespace PrefabSync
                     GameObject goChildOld = rectOld.Find(name).gameObject;
                     GameObject goChildNew = rectNew.Find(name).gameObject;
                     string childPath = currentPath + name + "/";
-                    _traversalGameObject(childPath, goChildOld, goChildNew);
+                    _traverseGameObject(childPath, goChildOld, goChildNew);
                 }
             }
         }
 
         private static void CompareComponent(string currentPath, GameObject goOld, GameObject goNew)
         {
-            var oldComponents = goOld.GetComponents<Button>();
         }
 
         private static void RecordAddPath(string currentPath, string[] oldNameArray, string[] newNameArray)

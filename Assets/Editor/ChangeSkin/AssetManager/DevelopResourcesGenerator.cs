@@ -12,9 +12,9 @@ namespace AssetManager
         public static void Generate(string jsonPath)
         {
             string jsonFileName = FileUtility.GetFileName(jsonPath);
-            string imageDir = FileUtility.PSD_IMAGE_DIR + FileUtility.RemovePostfix(jsonFileName);
+            string imageDir = FileUtility.PSD_IMAGE_DIR + "/" + FileUtility.RemovePostfix(jsonFileName);
             string[] guidList = AssetDatabase.FindAssets("t:texture2D", new string[] { imageDir });
-            string moveDir = FileUtility.TEXTURE_MODULE_ATLAS_DIR + FileUtility.RemovePostfix(jsonFileName) + FileUtility.XIUXIAN_POSTFIX + "_/";
+            string moveDir = FileUtility.TEXTURE_MODULE_ATLAS_DIR + "/" + FileUtility.RemovePostfix(jsonFileName) + FileUtility.XIUXIAN_POSTFIX + "_/";
             FileUtility.CreateDirectory(moveDir);
 
             guidList = FilterSameImage(guidList, moveDir);
@@ -117,7 +117,7 @@ namespace AssetManager
 
         private static void CreateRelativePrefab(string imageFolderName, string moveDir)
         {
-            string spriteDir = FileUtility.RESOURCE_SPRITE_DIR + imageFolderName + "/";
+            string spriteDir = FileUtility.RESOURCE_SPRITE_DIR + "/" + imageFolderName + "/";
             FileUtility.RecreateDirectory(spriteDir);
             DirectoryInfo dirInfo = new DirectoryInfo(moveDir);
             foreach (FileInfo pngFile in dirInfo.GetFiles("*" + FileUtility.PNG_POSTFIX, SearchOption.TopDirectoryOnly))

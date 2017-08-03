@@ -10,12 +10,10 @@ namespace AssetManager
 {
     public class TextureIconAtlasProcessor : BaseProcessor
     {
-        private string _assetPath;
         private string _packingTag;
 
         public TextureIconAtlasProcessor(string path)
         {
-            _assetPath = path;
             string folderName = FileUtility.GetFolderName(path);
             _packingTag = folderName.Substring(0, folderName.Length - 1);
         }
