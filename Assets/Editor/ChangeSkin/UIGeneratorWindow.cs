@@ -72,6 +72,10 @@ namespace AssetManager
         private void OnGUI()
         {
             _errorMessage = "";
+            if(_jsonFileList == null)
+            {
+                InitJsonList();//预防在打开界面的时候调整代码，_jsonFileList数据会被清空
+            }
             EditorGUILayout.LabelField("Psd2Prefab");
             OnGUIJsonFile();
             OnGUIButton();

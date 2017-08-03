@@ -32,7 +32,9 @@ namespace Psd2UGUI
         [MenuItem("Psd2UGUI/图片比较")]
         private static void PictureCompare()
         {
-            Debug.LogError((ImageNode.Mirror)Enum.Parse(typeof(ImageNode.Mirror), "up"));
+            TextEditor textEditor = new TextEditor();
+            textEditor.text = "hello world1111122222";
+            textEditor.Copy();
             //GameObject go = GameObject.Find("Canvas/BuyButton/BuyButton");
             //TransformUtility.SetPivot(go.GetComponent<RectTransform>(), new Vector2(1, 1));
             //string[] fileNameArray = new string[] { "Button1.png", "Button2.png", "Button3.png", "Button4.png" };
