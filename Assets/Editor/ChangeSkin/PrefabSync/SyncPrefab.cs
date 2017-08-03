@@ -18,12 +18,12 @@ namespace PrefabSync
             string path = string.Empty;
             _addPathHash = new HashSet<string>();
             _inexistPathHash = new HashSet<string>();
-            _traversalGameObject(path, goOld, goCreate);
+            _traverseGameObject(path, goOld, goCreate);
             //Printer.Print(_addPathHash, "新添加的路径\n");
             //Printer.Print(_inexistPathHash, "缺失的路径\n");
         }
 
-        private static void _traversalGameObject(string path, GameObject goOld, GameObject goCreate)
+        private static void _traverseGameObject(string path, GameObject goOld, GameObject goCreate)
         {
             RectTransform rectOld = goOld.GetComponent<RectTransform>();
             RectTransform rectCreate = goCreate.GetComponent<RectTransform>();
@@ -90,7 +90,7 @@ namespace PrefabSync
                             GameObject goChildCreate = rectCreate.GetChild(i).gameObject;
                             //TODO 先针对现有情况简单处理
                             string currentPath = path + name + "/";
-                            _traversalGameObject(currentPath, goChildOld, goChildCreate);
+                            _traverseGameObject(currentPath, goChildOld, goChildCreate);
                         }
                     }
                     else
@@ -98,7 +98,7 @@ namespace PrefabSync
                         GameObject goChildOld = rectOld.Find(name).gameObject;
                         GameObject goChildCreate = rectCreate.Find(name).gameObject;
                         string currentPath = path + name + "/";
-                        _traversalGameObject(currentPath, goChildOld, goChildCreate);
+                        _traverseGameObject(currentPath, goChildOld, goChildCreate);
                     }
                 }
             }

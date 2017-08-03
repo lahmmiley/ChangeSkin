@@ -28,9 +28,9 @@ namespace Psd2UGUI
             CurrentName = name;
             ImageDataReader.Instance.Read(name);
 
-            JsonData jsonData = FileUtility.ReadJsonData(string.Format("{0}{1}{2}", FileUtility.UI_DATA_DIR, name, FileUtility.JSON_POSTFIX));
+            JsonData jsonData = FileUtility.ReadJsonData(string.Format("{0}/{1}{2}", FileUtility.PSD_DATA_DIR, name, FileUtility.JSON_POSTFIX));
             BaseNode root = CreateNodeTree(jsonData);
-            GameObject goParent = GameObject.Find("Canvas/New");
+            GameObject goParent = GameObject.Find("Canvas");
             root.Build(goParent.transform);
             //GameObject goRoot = goParent.transform.FindChild("root").gameObject;
         }
